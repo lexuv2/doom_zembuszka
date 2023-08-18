@@ -5,12 +5,32 @@ extends CharacterBody2D
 var hp = 100
 var psycha = 100
 var score = 0
+var dimension:bool=1
 @export var booba_v_offset:int
+@export var sprite_doom: Texture2D
+@export var sprite_fairy: Texture2D
+
+@export var sprite_left_boob_doom: Texture2D
+@export var sprite_left_boob_fairy: Texture2D
+
+@export var sprite_right_boob_doom: Texture2D
+@export var sprite_right_boob_fairy: Texture2D
 
 var sprite_rotation_target=0.0
 func set_booba_offset(inp:int ):
 	booba_v_offset=inp
 	get_node("/root/root").booba(inp)
+	
+func change_dimension(dim: bool):
+	if dim:
+		$fairy.texture=sprite_doom
+		$fairy/FaerieBoobaLeft.texture=sprite_left_boob_doom
+		$fairy/FaerieBoobaRight.texture=sprite_right_boob_doom
+	else:
+		$fairy.texture=sprite_fairy
+		$fairy/FaerieBoobaLeft.texture=sprite_left_boob_fairy
+		$fairy/FaerieBoobaRight.texture=sprite_right_boob_fairy
+	
 func _physics_process(delta):
 	#get_node("/root/root").vertical_off=booba_v_offset
 
@@ -44,7 +64,9 @@ func _physics_process(delta):
 	
 	
 	
-	
+	if Input.is_action_just_pressed("change_dimmension"):
+		dimension=!dimension
+		change_dimension(dimension)
 	if Input.is_action_just_pressed("lmb"):
 		$gun_handler.shoot()
 	

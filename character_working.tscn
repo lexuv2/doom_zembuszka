@@ -5,8 +5,8 @@
 [ext_resource type="Script" path="res://Camera2D.gd" id="3_x3j1a"]
 [ext_resource type="Texture2D" uid="uid://v8bb4uyj5u34" path="res://faerie_booba_left.png" id="5_angah"]
 [ext_resource type="Script" path="res://gun_handler.gd" id="5_cp6vo"]
-[ext_resource type="PackedScene" uid="uid://d2fhrpu2in1o1" path="res://scenes/shotgun.tscn" id="6_dkkg6"]
 [ext_resource type="Texture2D" uid="uid://dtmv1q2sk6wc0" path="res://faerie_booba_right.png" id="6_htnr4"]
+[ext_resource type="PackedScene" uid="uid://iyvhc2g4r5y1" path="res://cannon.tscn" id="7_h03ym"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6ekui"]
 radius = 17.0
@@ -105,7 +105,7 @@ script = ExtResource("3_x3j1a")
 [node name="gun_handler" type="Node2D" parent="."]
 script = ExtResource("5_cp6vo")
 
-[node name="shotgun" parent="gun_handler" instance=ExtResource("6_dkkg6")]
+[node name="shotgun" parent="gun_handler" instance=ExtResource("7_h03ym")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

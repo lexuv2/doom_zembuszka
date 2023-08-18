@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b2gns5uq3xa8n"]
+[gd_scene load_steps=21 format=3 uid="uid://b2gns5uq3xa8n"]
 
 [ext_resource type="Texture2D" uid="uid://cnre0o16gedlv" path="res://textures/doometernalartwork.jpg" id="1_725g5"]
 [ext_resource type="Script" path="res://root.gd" id="1_hjnfc"]
@@ -6,9 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://t0wf5mei3iro" path="res://character_working.tscn" id="3_ise32"]
 [ext_resource type="Theme" uid="uid://c3doc5dml7lkv" path="res://doom_theme.tres" id="4_2cgt6"]
 [ext_resource type="Texture2D" uid="uid://c8rj2y640ig1t" path="res://textures/ZombV2.png" id="4_5prvw"]
+[ext_resource type="Texture2D" uid="uid://b5qfi5xkbv8pd" path="res://faerie_idle_spritesheet_plus2pixel.png" id="4_olet7"]
+[ext_resource type="Texture2D" uid="uid://biyqdcrstqrk5" path="res://textures/faerie_fae_idle_spritesheet.png" id="5_hsnad"]
 [ext_resource type="PackedScene" uid="uid://1a7x8mul4ksb" path="res://demon.tscn" id="5_lswl2"]
+[ext_resource type="Texture2D" uid="uid://v8bb4uyj5u34" path="res://faerie_booba_left.png" id="6_qbc28"]
+[ext_resource type="Texture2D" uid="uid://v7kcai3p6duv" path="res://textures/faerie_fae_booba_left.png" id="7_2wwn1"]
 [ext_resource type="Texture2D" uid="uid://cg0m6rel464rt" path="res://textures/psycha/Psycha1.png" id="7_6noex"]
 [ext_resource type="Texture2D" uid="uid://bw6iyqemt6sld" path="res://textures/psycha/Psycha2V2.png" id="8_e3eqd"]
+[ext_resource type="Texture2D" uid="uid://dtmv1q2sk6wc0" path="res://faerie_booba_right.png" id="8_qwjgo"]
+[ext_resource type="Texture2D" uid="uid://df5f3t703dt4f" path="res://textures/faerie_fae_booba_right.png" id="9_6unu3"]
 [ext_resource type="Texture2D" uid="uid://cesqhn60gxkvm" path="res://textures/psycha/Psycha3.png" id="9_7hghp"]
 [ext_resource type="Texture2D" uid="uid://cvf3x00softwu" path="res://textures/psycha/Psycha4.png" id="10_o81a7"]
 [ext_resource type="Texture2D" uid="uid://dshive047741y" path="res://textures/psycha/Psycha5.png" id="11_hniqk"]
@@ -25,6 +31,12 @@ position = Vector2(628, 334)
 texture = ExtResource("1_725g5")
 
 [node name="character" parent="." instance=ExtResource("3_ise32")]
+sprite_doom = ExtResource("4_olet7")
+sprite_fairy = ExtResource("5_hsnad")
+sprite_left_boob_doom = ExtResource("6_qbc28")
+sprite_left_boob_fairy = ExtResource("7_2wwn1")
+sprite_right_boob_doom = ExtResource("8_qwjgo")
+sprite_right_boob_fairy = ExtResource("9_6unu3")
 
 [node name="booba_l" parent="." instance=ExtResource("1_jb7nx")]
 position = Vector2(-47, 3)

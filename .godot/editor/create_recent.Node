@@ -1,4 +1,7 @@
+AudioStreamPlayer2D
+GPUParticles2D
 AnimationPlayer
+CanvasModulate
 Sprite2D
 TileMap
 TextureRect
@@ -9,13 +12,11 @@ DampedSpringJoint2D
 Node2D
 ShapeCast2D
 LightOccluder2D
-GPUParticles2D
 Label
 ColorRect
 VBoxContainer
 GridContainer
 CanvasLayer
 AudioListener2D
-AudioStreamPlayer2D
 Camera2D
 CharacterBody2D

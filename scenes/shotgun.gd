@@ -2,10 +2,13 @@ extends Node2D
 
 @onready var bullet = preload("res://bullet.tscn")
 @onready var casing = preload("res://scenes/casing.tscn")
-@export var recoil = 100
+@export var automatic_shoot:bool =true
+@export var camera_recoil = 100
+@export var move_recoil = 100
 @export var shoot_delay_frames = 60
 @export var shoot_number = 10
 @export var spread= 0.5
+@onready var animation_player = $AnimationPlayer
 var delay = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,7 +18,10 @@ func _ready():
 var global_pos=Vector2.ZERO
 
 func shoot():
-	_shoot()
+	if (animation_player != null):
+		animation_player.play("shoot")
+	if automatic_shoot:
+		_shoot()
 	
 func eject_casing():
 	var case = casing.instantiate()

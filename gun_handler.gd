@@ -13,8 +13,8 @@ func shoot():
 	gun.shoot()
 func recoil():
 	var gun = get_child(0)
-	get_parent().velocity-=Vector2.from_angle(gun.rotation)*gun.recoil
-	$"../Camera2D".vel-=Vector2.from_angle(gun.rotation)*gun.recoil
+	get_parent().velocity-=Vector2.from_angle(gun.rotation)*gun.move_recoil
+	$"../Camera2D".vel-=Vector2.from_angle(gun.rotation)*gun.camera_recoil
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
