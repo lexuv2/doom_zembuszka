@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var bullet = preload("res://bullet.tscn")
+@export var bullet = preload("res://bullet.tscn")
 @onready var casing = preload("res://scenes/casing.tscn")
 @export var automatic_shoot:bool =true
 @export var camera_recoil = 100

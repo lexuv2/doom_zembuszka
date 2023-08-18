@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://iyvhc2g4r5y1"]
+[gd_scene load_steps=13 format=3 uid="uid://iyvhc2g4r5y1"]
 
 [ext_resource type="PackedScene" uid="uid://d2fhrpu2in1o1" path="res://scenes/shotgun.tscn" id="1_mj4ra"]
+[ext_resource type="PackedScene" uid="uid://cq78h640irfwq" path="res://canonball.tscn" id="2_iguet"]
 [ext_resource type="Texture2D" uid="uid://dxnilxmpbx5eu" path="res://textures/armata.png" id="2_qm1qf"]
 [ext_resource type="AudioStream" uid="uid://wq2clo7dkb8b" path="res://scenes/cannon-fire-161072.mp3" id="3_gnp3j"]
 [ext_resource type="AudioStream" uid="uid://ds5gxhls24pi6" path="res://scenes/creeper.mp3" id="4_t7w37"]
@@ -96,7 +97,7 @@ _data = {
 offsets = PackedFloat32Array(0, 0.490291, 1)
 colors = PackedColorArray(1, 0, 0, 1, 0.90422, 0.817468, 3.85046e-07, 1, 1, 1, 1, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_fhac1"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bgbdj"]
 gradient = SubResource("Gradient_k184n")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ejc6y"]
@@ -112,9 +113,9 @@ orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
 damping_min = 5.0
 damping_max = 10.0
-scale_min = 2.0
-scale_max = 5.0
-color_ramp = SubResource("GradientTexture1D_fhac1")
+scale_min = 4.0
+scale_max = 6.0
+color_ramp = SubResource("GradientTexture1D_bgbdj")
 sub_emitter_mode = 2
 sub_emitter_amount_at_end = 2
 
@@ -135,9 +136,11 @@ scale_max = 10.0
 color = Color(1, 1, 1, 0.223529)
 
 [node name="shotgun" instance=ExtResource("1_mj4ra")]
+bullet = ExtResource("2_iguet")
 automatic_shoot = false
 camera_recoil = 150
 move_recoil = 500
+shoot_number = 1
 
 [node name="gun_sprite" parent="." index="0"]
 position = Vector2(1, -5)

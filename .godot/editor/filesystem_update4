@@ -12,3 +12,6 @@ res://character.gd
 res://scenes/shotgun.tscn
 res://cannon.tscn
 res://gun_handler.gd
+res://canonball.tscn
+res://bullet.gd
+res://scenes/wall_mask.tscn

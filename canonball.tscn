@@ -1,0 +1,104 @@
+[gd_scene load_steps=9 format=3 uid="uid://cq78h640irfwq"]
+
+[ext_resource type="Script" path="res://bullet.gd" id="1_38rtk"]
+[ext_resource type="Texture2D" uid="uid://dw40dfqf7wt2s" path="res://armatapocisk-sheet.png" id="2_f0y5y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3dwqx"]
+radius = 4.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cvgld"]
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_box_extents = Vector3(1, 10, 1)
+particle_flag_disable_z = true
+gravity = Vector3(0, -3, 0)
+initial_velocity_min = 60.0
+initial_velocity_max = 60.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+damping_min = 1.0
+damping_max = 1.0
+scale_min = 10.0
+scale_max = 10.0
+color = Color(1, 1, 1, 0.223529)
+
+[sub_resource type="Gradient" id="Gradient_pqcer"]
+offsets = PackedFloat32Array(0, 0.490291, 1)
+colors = PackedColorArray(1, 0, 0, 1, 0.90422, 0.817468, 3.85046e-07, 1, 0.481789, 0.48179, 0.481789, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fhac1"]
+gradient = SubResource("Gradient_pqcer")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_n35uh"]
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_box_extents = Vector3(1, 10, 1)
+particle_flag_disable_z = true
+direction = Vector3(1, 0.1, 0)
+spread = 180.0
+gravity = Vector3(0, 20, 0)
+initial_velocity_min = 600.0
+initial_velocity_max = 1200.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = -1000.0
+linear_accel_max = -500.0
+damping_min = 500.0
+damping_max = 1000.0
+scale_min = 5.0
+scale_max = 16.0
+color_ramp = SubResource("GradientTexture1D_fhac1")
+sub_emitter_mode = 2
+sub_emitter_amount_at_end = 2
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sth66"]
+lifetime_randomness = 0.3
+emission_shape = 3
+emission_box_extents = Vector3(1, 10, 1)
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, -3, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 30.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+damping_min = 1.0
+damping_max = 1.0
+scale_min = 10.0
+scale_max = 10.0
+color = Color(1, 1, 1, 0.223529)
+
+[node name="bullet" type="RigidBody2D"]
+lock_rotation = true
+script = ExtResource("1_38rtk")
+speed = 1000
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3dwqx")
+
+[node name="Pngimg_com-MayonnaisePng81" type="Sprite2D" parent="."]
+texture = ExtResource("2_f0y5y")
+
+[node name="ball_smoke" type="GPUParticles2D" parent="."]
+amount = 200
+process_material = SubResource("ParticleProcessMaterial_cvgld")
+lifetime = 3.0
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(0, 1)
+emitting = false
+amount = 200
+sub_emitter = NodePath("../GPUParticles2D2")
+process_material = SubResource("ParticleProcessMaterial_n35uh")
+lifetime = 0.2
+one_shot = true
+explosiveness = 0.8
+trail_lifetime = 0.1
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+position = Vector2(31, -1)
+emitting = false
+amount = 200
+process_material = SubResource("ParticleProcessMaterial_sth66")
+lifetime = 3.0
+explosiveness = 1.0

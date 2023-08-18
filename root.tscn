@@ -19,9 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cvf3x00softwu" path="res://textures/psycha/Psycha4.png" id="10_o81a7"]
 [ext_resource type="Texture2D" uid="uid://dshive047741y" path="res://textures/psycha/Psycha5.png" id="11_hniqk"]
 [ext_resource type="Texture2D" uid="uid://bmae37p0p601p" path="res://textures/serce.png" id="12_slgm2"]
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8j8va"]
-polygon = PackedVector2Array(0, 58, -4, -209, 77, -210, 77, 60)
+[ext_resource type="PackedScene" uid="uid://l1peipbuq6mv" path="res://scenes/wall_mask.tscn" id="20_grivc"]
 
 [node name="root" type="Node2D"]
 script = ExtResource("1_hjnfc")
@@ -121,9 +119,9 @@ texture = ExtResource("12_slgm2")
 position = Vector2(295, 255)
 mass = 100.0
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-position = Vector2(656, 327)
-occluder = SubResource("OccluderPolygon2D_8j8va")
-
 [node name="TileMap" type="TileMap" parent="."]
 format = 2
+
+[node name="wall_mask" parent="." instance=ExtResource("20_grivc")]
+position = Vector2(595, 258)
+scale = Vector2(1, 10)
