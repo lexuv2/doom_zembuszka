@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://1a7x8mul4ksb"]
+
+[ext_resource type="Texture2D" uid="uid://b3wo7ty0es5hv" path="res://textures/82530246.jpg" id="1_t6dwa"]
+[ext_resource type="Script" path="res://demon.gd" id="1_yxn7v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pv2w1"]
+radius = 46.2709
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mp00s"]
+lifetime_randomness = 0.5
+emission_shape = 1
+emission_sphere_radius = 0.01
+particle_flag_disable_z = true
+spread = 30.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 500.0
+initial_velocity_max = 1000.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+damping_min = 30.0
+damping_max = 50.0
+scale_min = 3.0
+scale_max = 5.0
+color = Color(1, 0, 0, 1)
+sub_emitter_mode = 3
+sub_emitter_amount_at_collision = 32
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.05
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vviil"]
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+damping_min = 0.1
+damping_max = 0.1
+scale_min = 5.0
+scale_max = 10.0
+color = Color(1, 0, 0, 1)
+
+[node name="demon" type="RigidBody2D"]
+max_contacts_reported = 2
+contact_monitor = true
+script = ExtResource("1_yxn7v")
+
+[node name="82530246" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, -5.96046e-08)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_t6dwa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pv2w1")
+
+[node name="bullet_blood" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 1000
+sub_emitter = NodePath("../blood")
+process_material = SubResource("ParticleProcessMaterial_mp00s")
+randomness = 0.1
+trail_lifetime = 0.13
+
+[node name="blood" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_vviil")
+lifetime = 100.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

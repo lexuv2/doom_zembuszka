@@ -1,3 +1,117 @@
-[gd_scene format=3 uid="uid://b2gns5uq3xa8n"]
+[gd_scene load_steps=15 format=3 uid="uid://b2gns5uq3xa8n"]
+
+[ext_resource type="Texture2D" uid="uid://cnre0o16gedlv" path="res://textures/doometernalartwork.jpg" id="1_725g5"]
+[ext_resource type="Script" path="res://root.gd" id="1_hjnfc"]
+[ext_resource type="PackedScene" uid="uid://bw08oun4htikl" path="res://scenes/booba.tscn" id="1_jb7nx"]
+[ext_resource type="PackedScene" uid="uid://t0wf5mei3iro" path="res://character_working.tscn" id="3_ise32"]
+[ext_resource type="Theme" uid="uid://c3doc5dml7lkv" path="res://doom_theme.tres" id="4_2cgt6"]
+[ext_resource type="Texture2D" uid="uid://c8rj2y640ig1t" path="res://textures/ZombV2.png" id="4_5prvw"]
+[ext_resource type="PackedScene" uid="uid://1a7x8mul4ksb" path="res://demon.tscn" id="5_lswl2"]
+[ext_resource type="Texture2D" uid="uid://cg0m6rel464rt" path="res://textures/psycha/Psycha1.png" id="7_6noex"]
+[ext_resource type="Texture2D" uid="uid://bw6iyqemt6sld" path="res://textures/psycha/Psycha2V2.png" id="8_e3eqd"]
+[ext_resource type="Texture2D" uid="uid://cesqhn60gxkvm" path="res://textures/psycha/Psycha3.png" id="9_7hghp"]
+[ext_resource type="Texture2D" uid="uid://cvf3x00softwu" path="res://textures/psycha/Psycha4.png" id="10_o81a7"]
+[ext_resource type="Texture2D" uid="uid://dshive047741y" path="res://textures/psycha/Psycha5.png" id="11_hniqk"]
+[ext_resource type="Texture2D" uid="uid://bmae37p0p601p" path="res://textures/serce.png" id="12_slgm2"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8j8va"]
+polygon = PackedVector2Array(0, 58, -4, -209, 77, -210, 77, 60)
 
 [node name="root" type="Node2D"]
+script = ExtResource("1_hjnfc")
+
+[node name="temp_background" type="Sprite2D" parent="."]
+position = Vector2(628, 334)
+texture = ExtResource("1_725g5")
+
+[node name="character" parent="." instance=ExtResource("3_ise32")]
+
+[node name="booba_l" parent="." instance=ExtResource("1_jb7nx")]
+position = Vector2(-47, 3)
+mass = 0.1
+linear_damp = 10.0
+off = Vector2(-2.5, -14)
+
+[node name="booba_r" parent="." instance=ExtResource("1_jb7nx")]
+position = Vector2(-17, 2)
+mass = 0.1
+linear_damp = 10.0
+off = Vector2(2.5, -14)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GridContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("4_2cgt6")
+
+[node name="tooth_icon" type="TextureRect" parent="CanvasLayer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("4_5prvw")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/GridContainer/tooth_icon"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 4.0
+offset_right = 133.0
+offset_bottom = 65.0
+theme = ExtResource("4_2cgt6")
+text = "2137"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GridContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_6noex")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/GridContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_e3eqd")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/GridContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_7hghp")
+
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/GridContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("10_o81a7")
+
+[node name="TextureRect5" type="TextureRect" parent="CanvasLayer/GridContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("11_hniqk")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GridContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("12_slgm2")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/GridContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("12_slgm2")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/GridContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("12_slgm2")
+
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/GridContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("12_slgm2")
+
+[node name="TextureRect5" type="TextureRect" parent="CanvasLayer/GridContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("12_slgm2")
+
+[node name="demon" parent="." instance=ExtResource("5_lswl2")]
+position = Vector2(295, 255)
+mass = 100.0
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(656, 327)
+occluder = SubResource("OccluderPolygon2D_8j8va")
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2

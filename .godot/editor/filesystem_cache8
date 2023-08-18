@@ -1,3 +1,51 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1692361050
+::res://::1692392897
+bullet.gd::GDScript::-1::1692364213::0::1::::bullet<>RigidBody2D<>::
+bullet.tscn::PackedScene::2954445522041603441::1692392897::0::1::::<><>::res://bullet.gd<>uid://cijok0bjgam30::::res://textures/pocisk2.png
+Camera2D.gd::GDScript::-1::1692385993::0::1::::<>Camera2D<>::
+character (copy).tscn::PackedScene::1386543770216196432::1692389877::0::1::::<><>::res://character.gd<>uid://b5qfi5xkbv8pd::::res://faerie_idle_spritesheet_plus2pixel.png<>res://Camera2D.gd<>uid://v8bb4uyj5u34::::res://faerie_booba_left.png<>res://gun_handler.gd<>uid://d2fhrpu2in1o1::::res://scenes/gun.tscn<>uid://dtmv1q2sk6wc0::::res://faerie_booba_right.png
+character.gd::GDScript::-1::1692389017::0::1::::<>CharacterBody2D<>::
+character.tscn::PackedScene::1386543770216196432::1692392842::0::1::::<><>::res://character.gd<>uid://b5qfi5xkbv8pd::::res://faerie_idle_spritesheet_plus2pixel.png<>res://Camera2D.gd<>uid://v8bb4uyj5u34::::res://faerie_booba_left.png<>res://gun_handler.gd<>uid://d2fhrpu2in1o1::::res://scenes/shotgun.tscn<>uid://dtmv1q2sk6wc0::::res://faerie_booba_right.png
+Cute Notes.ttf::FontFile::5843463551952686635::1692365825::1692365825::1::::<><>::
+demon.gd::GDScript::-1::1692376651::0::1::::<>RigidBody2D<>::
+demon.tscn::PackedScene::1826895704349949349::1692392897::0::1::::<><>::uid://b3wo7ty0es5hv::::res://textures/82530246.jpg<>res://demon.gd
+doom_theme.tres::Theme::6745177312895941637::1692365974::0::1::::<><>::uid://impkkk14bqei
+faerie_booba_left.png::CompressedTexture2D::1542154240246246949::1692379107::1692379107::1::::<><>::
+faerie_booba_right.png::CompressedTexture2D::8518944983656025293::1692379113::1692379113::1::::<><>::
+faerie_idle_spritesheet.png::CompressedTexture2D::3287963523944810851::1692378821::1692378824::1::::<><>::
+faerie_idle_spritesheet_plus2pixel.png::CompressedTexture2D::4525435519901660989::1692382645::1692382645::1::::<><>::
+fairy_theme.tres::Theme::8284438503126117798::1692365974::0::1::::<><>::uid://impkkk14bqei
+gun_handler.gd::GDScript::-1::1692385993::0::1::::<>Node2D<>::
 icon.svg::CompressedTexture2D::8670812232552634966::1692361046::1692361052::1::::<><>::
+kar96k.tscn::PackedScene::1570532015525938004::1692392897::0::1::::<><>::uid://d2fhrpu2in1o1::::res://scenes/shotgun.tscn<>uid://bbop7xh2vhu40::::res://textures/GEWER2-Sheet.png
+root.gd::GDScript::-1::1692387882::0::1::::<>Node2D<>::
+root.tscn::PackedScene::4294728801002468199::1692392896::0::1::::<><>::uid://cnre0o16gedlv::::res://textures/doometernalartwork.jpg<>res://root.gd<>uid://bw08oun4htikl::::res://scenes/booba.tscn<>uid://t0wf5mei3iro::::res://character.tscn<>uid://c3doc5dml7lkv::::res://doom_theme.tres<>uid://c8rj2y640ig1t::::res://textures/ZombV2.png<>uid://1a7x8mul4ksb::::res://demon.tscn<>uid://cg0m6rel464rt::::res://textures/psycha/Psycha1.png<>uid://bw6iyqemt6sld::::res://textures/psycha/Psycha2V2.png<>uid://cesqhn60gxkvm::::res://textures/psycha/Psycha3.png<>uid://cvf3x00softwu::::res://textures/psycha/Psycha4.png<>uid://dshive047741y::::res://textures/psycha/Psycha5.png<>uid://bmae37p0p601p::::res://textures/serce.png
+shotgun_sound.mp3::AudioStreamMP3::3158670298599702786::1692364908::1692364917::1::::<><>::
+Unthinkers Slant DEMO.otf::FontFile::587212436885200616::1692365841::1692365841::1::::<><>::
+::res://scenes/::1692392897
+booba.gd::GDScript::-1::1692387535::0::1::::<>RigidBody2D<>::
+booba.tscn::PackedScene::3984214421334468071::1692392897::0::1::::<><>::res://scenes/booba.gd<>uid://v8bb4uyj5u34::::res://faerie_booba_left.png
+casing.gd::GDScript::-1::1692392053::0::1::::<>RigidBody2D<>::
+casing.tscn::PackedScene::441967106778957928::1692392897::0::1::::<><>::res://scenes/casing.gd<>uid://q8yj8eutmp6e::::res://scenes/lusKASTRZELBA.png
+lusKASTRZELBA.png::CompressedTexture2D::1192620984448391278::1692377390::1692377390::1::::<><>::
+shotgun.gd::GDScript::-1::1692392313::0::1::::<>Node2D<>::
+shotgun.tscn::PackedScene::9065138915506554022::1692392897::0::1::::<><>::uid://clpmq6n1ssxrh::::res://scenes/shotgun_wip.png<>res://scenes/shotgun.gd<>uid://blac3rd0et20m::::res://shotgun_sound.mp3
+shotgun_wip.png::CompressedTexture2D::5576643139843552469::1692377789::1692377789::1::::<><>::
+::res://textures/::1692390491
+124130_1280_720.webp::CompressedTexture2D::7149582204698191419::1692361983::1692366482::1::::<><>::
+82530246.jpg::CompressedTexture2D::4398032835611942123::1692366599::1692366599::1::::<><>::
+doometernalartwork.jpg::CompressedTexture2D::5720679046226821623::1692361877::1692366505::1::::<><>::
+GEWER2-Sheet.png::CompressedTexture2D::2486479936290226923::1692390491::1692390491::1::::<><>::
+hand-gun-png-24.png::CompressedTexture2D::5981592611047439598::1692363406::1692366505::1::::<><>::
+pngimg.com - mayonnaise_PNG81.png::CompressedTexture2D::5987808967580947649::1692363624::1692366505::1::::<><>::
+pocisk2.png::CompressedTexture2D::5353800727160288321::1692389631::1692389631::1::::<><>::
+pocisk.png::CompressedTexture2D::3528820723557035373::1692389514::1692389514::1::::<><>::
+serce.png::CompressedTexture2D::3228981382626342319::1692386215::1692386215::1::::<><>::
+tileset_hell.png::CompressedTexture2D::8529507323000931886::1692389494::1692389495::1::::<><>::
+ZombV2.png::CompressedTexture2D::7124763608431315663::1692365007::1692366505::1::::<><>::
+::res://textures/psycha/::1692383596
+Psycha1.png::CompressedTexture2D::5246368736206106225::1692383596::1692383596::1::::<><>::
+Psycha2V2.png::CompressedTexture2D::3995100396226190825::1692383593::1692383594::1::::<><>::
+Psycha3.png::CompressedTexture2D::5091740245790313974::1692383591::1692383591::1::::<><>::
+Psycha4.png::CompressedTexture2D::6258871474153084244::1692383588::1692383588::1::::<><>::
+Psycha5.png::CompressedTexture2D::8437635368531632224::1692383581::1692383584::1::::<><>::

@@ -1,0 +1,113 @@
+[gd_scene load_steps=12 format=3 uid="uid://t0wf5mei3iro"]
+
+[ext_resource type="Script" path="res://character.gd" id="1_kd2mr"]
+[ext_resource type="Texture2D" uid="uid://b5qfi5xkbv8pd" path="res://faerie_idle_spritesheet_plus2pixel.png" id="2_yyrvc"]
+[ext_resource type="Script" path="res://Camera2D.gd" id="3_x3j1a"]
+[ext_resource type="Texture2D" uid="uid://v8bb4uyj5u34" path="res://faerie_booba_left.png" id="5_angah"]
+[ext_resource type="Script" path="res://gun_handler.gd" id="5_cp6vo"]
+[ext_resource type="PackedScene" uid="uid://d2fhrpu2in1o1" path="res://scenes/shotgun.tscn" id="6_dkkg6"]
+[ext_resource type="Texture2D" uid="uid://dtmv1q2sk6wc0" path="res://faerie_booba_right.png" id="6_htnr4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6ekui"]
+radius = 17.0
+height = 62.0
+
+[sub_resource type="Animation" id="Animation_2w0sf"]
+length = 0.433337
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fairy:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [0],
+"method": &"set_booba_offset"
+}, {
+"args": [2],
+"method": &"set_booba_offset"
+}, {
+"args": [0],
+"method": &"set_booba_offset"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_akjs5"]
+resource_name = "idle"
+length = 0.433337
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fairy:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yqfy3"]
+_data = {
+"RESET": SubResource("Animation_2w0sf"),
+"idle": SubResource("Animation_akjs5")
+}
+
+[node name="character" type="CharacterBody2D"]
+motion_mode = 1
+floor_stop_on_slope = false
+floor_block_on_wall = false
+script = ExtResource("1_kd2mr")
+SPEED = 25.0
+
+[node name="fairy" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("2_yyrvc")
+hframes = 13
+
+[node name="FaerieBoobaLeft" type="Sprite2D" parent="fairy"]
+texture = ExtResource("5_angah")
+
+[node name="FaerieBoobaRight" type="Sprite2D" parent="fairy"]
+texture = ExtResource("6_htnr4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_6ekui")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+process_callback = 0
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+script = ExtResource("3_x3j1a")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+
+[node name="gun_handler" type="Node2D" parent="."]
+script = ExtResource("5_cp6vo")
+
+[node name="shotgun" parent="gun_handler" instance=ExtResource("6_dkkg6")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yqfy3")
+}
