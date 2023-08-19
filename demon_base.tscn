@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://bctat1u1j0s4r"]
 
 [ext_resource type="Script" path="res://demon.gd" id="1_pewgv"]
-[ext_resource type="Texture2D" uid="uid://ckihkmpiwfo1q" path="res://textures/demon_fat.png" id="2_684rv"]
+[ext_resource type="Texture2D" uid="uid://8cberns13vts" path="res://textures/demon_oko.png" id="2_ae6os"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pv2w1"]
-radius = 87.0919
+radius = 56.5685
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mp00s"]
 lifetime_randomness = 0.5
@@ -47,14 +47,15 @@ collision_use_scale = true
 [node name="demon" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_pewgv")
-speed = 10.0
+speed = 150.0
 
 [node name="82530246" type="Sprite2D" parent="."]
 position = Vector2(7, -21)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_684rv")
+texture = ExtResource("2_ae6os")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, -21)
 shape = SubResource("CircleShape2D_pv2w1")
 
 [node name="bullet_blood" type="GPUParticles2D" parent="."]

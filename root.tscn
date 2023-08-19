@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b2gns5uq3xa8n"]
+[gd_scene load_steps=25 format=3 uid="uid://b2gns5uq3xa8n"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_hjnfc"]
 [ext_resource type="PackedScene" uid="uid://bw08oun4htikl" path="res://scenes/booba.tscn" id="1_jb7nx"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cvf3x00softwu" path="res://textures/psycha/Psycha4.png" id="10_o81a7"]
 [ext_resource type="Texture2D" uid="uid://dshive047741y" path="res://textures/psycha/Psycha5.png" id="11_hniqk"]
 [ext_resource type="Texture2D" uid="uid://bmae37p0p601p" path="res://textures/serce.png" id="12_slgm2"]
+[ext_resource type="PackedScene" uid="uid://bctat1u1j0s4r" path="res://demon_base.tscn" id="20_nhg8s"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mk2g6"]
 vertices = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
@@ -394,3 +395,6 @@ texture = ExtResource("12_slgm2")
 
 [node name="demon" parent="." instance=ExtResource("5_lswl2")]
 position = Vector2(295, 255)
+
+[node name="demon2" parent="." instance=ExtResource("20_nhg8s")]
+position = Vector2(455, -186)

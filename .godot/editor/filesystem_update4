@@ -1,6 +1,7 @@
 res://root.tscn
+res://demon.gd
 res://bullet.tscn
-res://demon.tscn
+res://demon_gruby.tscn
 res://scenes/casing.tscn
 res://scenes/booba.tscn
 res://scenes/kar96k.tscn
@@ -9,8 +10,5 @@ res://cannon.tscn
 res://scenes/shotgun.tscn
 res://canonball.tscn
 res://scenes/wall_mask.tscn
-res://bullet.gd
-res://canonball.gd
-res://demon.gd
-res://demon_gruby.tscn
 res://demon_base.tscn
+res://demon_gruby.gd
