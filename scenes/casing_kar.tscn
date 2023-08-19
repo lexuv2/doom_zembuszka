@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxafnwj8yhqnr"]
+
+[ext_resource type="Script" path="res://scenes/casing.gd" id="1_fhj8s"]
+[ext_resource type="Texture2D" uid="uid://1xxi7q2svtk3" path="res://scenes/luskkar.png" id="2_rt38v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_svxx0"]
+size = Vector2(10, 4)
+
+[node name="casing" type="RigidBody2D"]
+collision_layer = 512
+collision_mask = 512
+linear_damp = 2.0
+script = ExtResource("1_fhj8s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_svxx0")
+
+[node name="LusKastrzelba" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("2_rt38v")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://wm1oymjfgqk7"]
+[gd_scene load_steps=7 format=3 uid="uid://wm1oymjfgqk7"]
 
 [ext_resource type="PackedScene" uid="uid://d2fhrpu2in1o1" path="res://scenes/shotgun.tscn" id="1_tjc44"]
 [ext_resource type="Texture2D" uid="uid://bbop7xh2vhu40" path="res://textures/GEWER2-Sheet.png" id="2_4xcy6"]
+[ext_resource type="PackedScene" uid="uid://bxafnwj8yhqnr" path="res://scenes/casing_kar.tscn" id="2_ywf7d"]
 
 [sub_resource type="Animation" id="Animation_rjl15"]
 length = 0.001
@@ -54,17 +55,22 @@ _data = {
 "shoot": SubResource("Animation_1j813")
 }
 
-[node name="gun" instance=ExtResource("1_tjc44")]
+[node name="gun" node_paths=PackedStringArray("animation_player") instance=ExtResource("1_tjc44")]
+casing = ExtResource("2_ywf7d")
 shoot_number = 1
 spread = 0.1
 damage = 60
+animation_player = NodePath("AnimationPlayer2")
 
 [node name="gun_sprite" parent="." index="0"]
 position = Vector2(12, 1)
 texture = ExtResource("2_4xcy6")
 hframes = 4
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+[node name="Marker2D" parent="gun_sprite" index="0"]
+position = Vector2(28, -4)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." index="2"]
 speed_scale = 0.5
 libraries = {
 "": SubResource("AnimationLibrary_qb8db")

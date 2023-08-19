@@ -9,7 +9,7 @@ var dimension:bool=1
 @export var booba_v_offset:int
 @export var sprite_doom: Texture2D
 @export var sprite_fairy: Texture2D
-var weapons  = ["res://scenes/shotgun.tscn","res://scenes/kar96k.tscn","res://cannon.tscn"]
+var weapons  = ["res://scenes/shotgun.tscn","res://scenes/kar96k.tscn","res://cannon.tscn","res://bofors.tscn"]
 var unlocks = [1,1,1,1,1]
 @export var damage_timeout=120
 var damage_timer=0;

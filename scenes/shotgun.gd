@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var bullet = preload("res://bullet.tscn")
-@onready var casing = preload("res://scenes/casing.tscn")
+@export var casing: PackedScene = load("res://scenes/casing.tscn")
 @export var automatic_shoot:bool =true
 @export var camera_recoil = 100
 @export var move_recoil = 100
@@ -9,7 +9,8 @@ extends Node2D
 @export var shoot_number = 5
 @export var spread= 0.5
 @export var damage=10
-@onready var animation_player = $AnimationPlayer
+@export var automatic: bool =false
+@export var animation_player:AnimationPlayer
 var delay = 100
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -53,7 +54,8 @@ func _shoot():
 		
 		b.rotation = global_pos.angle_to_point(get_global_mouse_position())
 		var p=5*x
-		b.position = global_pos+global_pos.direction_to(get_global_mouse_position())*50*Vector2.from_angle(x/6.0)
+		b.position = $gun_sprite/Marker2D.global_position#*Vector2.from_angle(x/6.0)
+
 		get_node("/root").add_child(b)
 		$shoot_sound.play()
 	
@@ -62,5 +64,6 @@ func _shoot():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+
 	delay+=1
 	pass
