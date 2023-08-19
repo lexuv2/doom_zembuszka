@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://1a7x8mul4ksb"]
 
-[ext_resource type="Texture2D" uid="uid://b3wo7ty0es5hv" path="res://textures/82530246.jpg" id="1_t6dwa"]
 [ext_resource type="Script" path="res://demon.gd" id="1_yxn7v"]
+[ext_resource type="Texture2D" uid="uid://ckihkmpiwfo1q" path="res://textures/demon_fat.png" id="2_yub8q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pv2w1"]
 radius = 46.2709
@@ -29,6 +29,7 @@ collision_friction = 0.0
 collision_bounce = 0.05
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vviil"]
+lifetime_randomness = 1.0
 particle_flag_disable_z = true
 spread = 180.0
 gravity = Vector3(0, 0, 0)
@@ -44,14 +45,16 @@ color = Color(1, 0, 0, 1)
 collision_use_scale = true
 
 [node name="demon" type="RigidBody2D"]
-max_contacts_reported = 2
+mass = 100.0
+max_contacts_reported = 10
 contact_monitor = true
+lock_rotation = true
 script = ExtResource("1_yxn7v")
 
 [node name="82530246" type="Sprite2D" parent="."]
 position = Vector2(4.76837e-07, -5.96046e-08)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_t6dwa")
+texture = ExtResource("2_yub8q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_pv2w1")
@@ -68,6 +71,6 @@ trail_lifetime = 0.13
 emitting = false
 amount = 100
 process_material = SubResource("ParticleProcessMaterial_vviil")
-lifetime = 100.0
+lifetime = 30.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

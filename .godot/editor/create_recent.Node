@@ -1,7 +1,9 @@
+GPUParticles2D
+RigidBody2D
+CharacterBody2D
 LightOccluder2D
 CollisionShape2D
 StaticBody2D
-GPUParticles2D
 AudioStreamPlayer2D
 AnimationPlayer
 CanvasModulate
@@ -9,7 +11,6 @@ Sprite2D
 TileMap
 TextureRect
 HBoxContainer
-RigidBody2D
 DampedSpringJoint2D
 Node2D
 ShapeCast2D
@@ -20,4 +21,3 @@ GridContainer
 CanvasLayer
 AudioListener2D
 Camera2D
-CharacterBody2D

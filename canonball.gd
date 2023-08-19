@@ -1,4 +1,3 @@
-class_name bullet
 extends RigidBody2D
 
 # Called when the node enters the scene tree for the first time.
@@ -14,11 +13,16 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	if (linear_velocity.length()<1000):
-		$"Pngimg_com-MayonnaisePng81".visible=false
-		freeze=true
-		$GPUParticles2D.emitting=true
+	life+=1
+	if life<5:
+		return
+	if (linear_velocity.length()<30):
+		if timeout<=0:
+			$GPUParticles2D.emitting=1
+			$ball_smoke.emitting=0
 		timeout+=1
-		if timeout>20:
+		print("papaj")
+		
+		if timeout>120:
 			queue_free()
 	pass
