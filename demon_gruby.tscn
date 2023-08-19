@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ckihkmpiwfo1q" path="res://textures/demon_fat.png" id="2_yub8q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pv2w1"]
-radius = 46.2709
+radius = 87.0919
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mp00s"]
 lifetime_randomness = 0.5
@@ -44,15 +44,13 @@ scale_max = 10.0
 color = Color(1, 0, 0, 1)
 collision_use_scale = true
 
-[node name="demon" type="RigidBody2D"]
-mass = 100.0
-max_contacts_reported = 10
-contact_monitor = true
-lock_rotation = true
+[node name="demon_gruby" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_yxn7v")
+speed = 10.0
 
 [node name="82530246" type="Sprite2D" parent="."]
-position = Vector2(4.76837e-07, -5.96046e-08)
+position = Vector2(7, -21)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_yub8q")
 
@@ -73,4 +71,9 @@ amount = 100
 process_material = SubResource("ParticleProcessMaterial_vviil")
 lifetime = 30.0
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 128.0
+target_desired_distance = 128.0
+path_max_distance = 300.0
+path_postprocessing = 1
+debug_enabled = true

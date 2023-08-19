@@ -12,3 +12,5 @@ res://scenes/wall_mask.tscn
 res://bullet.gd
 res://canonball.gd
 res://demon.gd
+res://demon_gruby.tscn
+res://demon_base.tscn
