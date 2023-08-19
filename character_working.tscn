@@ -133,6 +133,7 @@ libraries = {
 }
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
 amount = 30
 process_material = SubResource("ParticleProcessMaterial_5rowl")
 lifetime = 0.3

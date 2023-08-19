@@ -16,7 +16,8 @@ func _ready() -> void:
 	retarget()
 
 func retarget() -> void:
-	agent.target_position = target.global_position
+	if get_node("/root/root").dimension:
+		agent.target_position = target.global_position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):

@@ -19,3 +19,6 @@ res://scenes/tooth.tscn
 res://root.gd
 res://scenes/child.gd
 res://scenes/child.tscn
+res://scenes/candy.tscn
+res://scenes/candy.gd
+res://dzieckowoz.gd

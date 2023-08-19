@@ -27,6 +27,7 @@ func set_booba_offset(inp:int ):
 	get_node("/root/root").booba(inp)
 	
 func change_dimension(dim: bool):
+	get_node("/root/root").change_diemnsion(dim)
 	if dim:
 		$fairy.texture=sprite_doom
 		$fairy/FaerieBoobaLeft.texture=sprite_left_boob_doom

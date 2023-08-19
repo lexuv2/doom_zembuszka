@@ -1,11 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://5ki6ov5ltp8t"]
+[gd_scene load_steps=8 format=3 uid="uid://ck75kch8qigmf"]
 
-[ext_resource type="Script" path="res://scenes/tooth.gd" id="1_1g7w0"]
-[ext_resource type="Texture2D" uid="uid://c8rj2y640ig1t" path="res://textures/ZombV2.png" id="2_kcduw"]
+[ext_resource type="Script" path="res://scenes/candy.gd" id="1_legwn"]
+[ext_resource type="Texture2D" uid="uid://b3qii6hsy7cv0" path="res://scenes/candy.png" id="2_qm6sg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aa8mi"]
-radius = 9.0
-height = 26.0
+radius = 16.0
+height = 32.0
 
 [sub_resource type="Curve" id="Curve_4ytgg"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.746421, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -24,21 +24,20 @@ orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
 damping_min = 10.0
 damping_max = 10.0
-scale_max = 3.0
+scale_min = 2.0
+scale_max = 6.0
 scale_curve = SubResource("CurveTexture_wbsqu")
-color = Color(1, 1, 0.709804, 1)
+color = Color(0.878431, 0, 0, 1)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5cjs7"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_cqfhx"]
 
-[node name="tooth" type="RigidBody2D"]
+[node name="candy" type="RigidBody2D"]
 linear_damp = 1.0
-script = ExtResource("1_1g7w0")
-blink_color = Color(0.952941, 0.831373, 0.0901961, 1)
+script = ExtResource("1_legwn")
 
 [node name="ZombV2" type="Sprite2D" parent="."]
 modulate = Color(0.999999, 0.999999, 0.999999, 1)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_kcduw")
+texture = ExtResource("2_qm6sg")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.3
@@ -53,12 +52,12 @@ shape = SubResource("CapsuleShape2D_aa8mi")
 emitting = false
 amount = 60
 process_material = SubResource("ParticleProcessMaterial_lgka2")
-lifetime = 0.2
+lifetime = 0.4
 one_shot = true
 explosiveness = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_5cjs7")
+shape = SubResource("CircleShape2D_cqfhx")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

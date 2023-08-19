@@ -12,7 +12,6 @@ func _process(delta):
 	$ZombV2.visible=!get_node("/root/root").dimension	
 	collision_layer=$ZombV2.visible
 	collision_mask=$ZombV2.visible
-	
 	if papaj:
 		$ZombV2.modulate = $ZombV2.modulate.lerp(blink_color,0.05)
 
@@ -31,7 +30,7 @@ func _on_timer_timeout():
 func _on_area_2d_body_entered(body):
 	if body is character and $ZombV2.visible:
 		var bd = body as character
-		bd.psycha+=1
+		bd.hp+=1
 		$GPUParticles2D.emitting=true
 		$GPUParticles2D.reparent(get_node("/root/root/"))
 		queue_free()

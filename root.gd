@@ -4,9 +4,32 @@ var booba_marker_left = Vector2.ZERO
 var booba_marker_right = Vector2.ZERO
 var vertical_off=0
 var player_hp
+var dimension = true
 var player_sanity
 var player_tooths
 var heart=preload("res://textures/sercegit.png")
+
+
+func change_diemnsion(dim: bool):
+	#1- hell
+	#0-fae
+	dimension=dim
+	if dim==true:
+		
+		$dzieckowoz.disable_children()
+		$demoniarnia.enable_children()
+		$demoniarnia.visible=true
+		$dzieckowoz.visible=false
+		$TileMap_fae.visible=false
+		$TileMap_doom.visible=true
+	else:
+		$dzieckowoz.enable_children()
+		$demoniarnia.disable_children()
+		$demoniarnia.visible=false
+		$dzieckowoz.visible=true
+		$TileMap_doom.visible=false
+		$TileMap_fae.visible=true
+	pass
 
 
 # Called when the node enters the scene tree for the first time.
