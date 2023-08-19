@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqdev71qf23wf"]
+[gd_scene load_steps=4 format=3 uid="uid://c1p0h68lwt64j"]
 
 [ext_resource type="Script" path="res://soundVolume.gd" id="1_s11tw"]
 [ext_resource type="Theme" uid="uid://dqbbqyqyp6duk" path="res://fairy_theme.tres" id="2_2h1tp"]
