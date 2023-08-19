@@ -17,10 +17,45 @@ func booba(inp: int):
 	$booba_r.apply_central_force(Vector2(0,inp*200))
 	pass
 	
+var p1 =preload("res://textures/psycha/Psycha1.png")
+var p2 =preload("res://textures/psycha/Psycha2V2.png")
+var p3 =preload("res://textures/psycha/Psycha3.png")
+var p4 =preload("res://textures/psycha/Psycha4.png")
+var p5 =preload("res://textures/psycha/Psycha5.png")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	print_debug($character.hp)
+	if $character.sanity >= 5:
+		$CanvasLayer/GridContainer/sanity/TextureRect.texture=p5
+	else:
+		$CanvasLayer/GridContainer/health/TextureRect5.texture=Texture2D
+	
+	if $character.sanity >= 4:
+		$CanvasLayer/GridContainer/sanity/TextureRect.texture=p4
+	else:
+		$CanvasLayer/GridContainer/health/TextureRect5.texture=Texture2D
+		
+	if $character.sanity >= 3:
+		$CanvasLayer/GridContainer/sanity/TextureRect.texture=p3
+	else:
+		$CanvasLayer/GridContainer/health/TextureRect5.texture=Texture2D
+		
+	if $character.sanity >= 2:
+		$CanvasLayer/GridContainer/sanity/TextureRect.texture=p2
+	else:
+		$CanvasLayer/GridContainer/health/TextureRect5.texture=Texture2D
+		
+	if $character.sanity >= 1:
+		$CanvasLayer/GridContainer/sanity/TextureRect.texture=p1
+	else:
+		$CanvasLayer/GridContainer/health/TextureRect5.texture=Texture2D
+		
+		
+		
+		
+		
+		
+		
 	if $character.hp >= 5:
 		$CanvasLayer/GridContainer/health/TextureRect5.texture=heart
 	else:

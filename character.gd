@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 @export var SPEED = 300.0
 var hp = 5
-var psycha = 100
+var psycha = 5
 var score = 0
 var dimension:bool=1
 @export var booba_v_offset:int
