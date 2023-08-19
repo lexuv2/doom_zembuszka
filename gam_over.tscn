@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://d6v2j228wfew"]
+
+[ext_resource type="Script" path="res://gam_over.gd" id="1_t4gle"]
+[ext_resource type="Theme" uid="uid://c3doc5dml7lkv" path="res://doom_theme.tres" id="1_vmxfq"]
+[ext_resource type="Script" path="res://restart.gd" id="3_yifij"]
+
+[node name="gam_over" type="Node2D"]
+script = ExtResource("1_t4gle")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme = ExtResource("1_vmxfq")
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -286.0
+offset_top = -180.5
+offset_right = 286.0
+offset_bottom = 180.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "GAM OVER"
+
+[node name="restart" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -199.5
+offset_top = -236.0
+offset_right = 199.5
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 46
+text = "Restart"
+script = ExtResource("3_yifij")
+
+[connection signal="pressed" from="Control/restart" to="Control/restart" method="_on_pressed"]

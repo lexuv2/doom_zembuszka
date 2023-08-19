@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://dqbbqyqyp6duk"]
 
-[ext_resource type="FontFile" uid="uid://impkkk14bqei" path="res://Unthinkers Slant DEMO.otf" id="1_ieecb"]
+[ext_resource type="FontFile" uid="uid://cpiu8xsxps0v4" path="res://Cute Notes.ttf" id="1_ut5jg"]
 
 [resource]
-default_font = ExtResource("1_ieecb")
+default_font = ExtResource("1_ut5jg")

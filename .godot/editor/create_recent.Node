@@ -1,5 +1,16 @@
+<<<<<<< Updated upstream
 Sprite2D
 Node2D
+=======
+Button
+Label
+HBoxContainer
+ColorRect
+HSlider
+MenuButton
+BoxContainer
+Control
+>>>>>>> Stashed changes
 CollisionShape2D
 RigidBody2D
 Area2D
@@ -15,11 +26,8 @@ AudioStreamPlayer2D
 AnimationPlayer
 CanvasModulate
 TextureRect
-HBoxContainer
 DampedSpringJoint2D
 ShapeCast2D
-Label
-ColorRect
 VBoxContainer
 GridContainer
 AudioListener2D

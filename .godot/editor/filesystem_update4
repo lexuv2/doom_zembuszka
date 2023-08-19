@@ -1,7 +1,12 @@
-res://root.tscn
+res://setings.tscn
+res://root.gd
+res://fairy_theme.tres
+res://start.tscn
+res://SETTINGS.gd
 res://textures/damage_indicator.tres
 res://textures/kref.material
 res://textures/blood_floor.tres
+<<<<<<< Updated upstream
 res://demon_gruby.tscn
 res://demon.gd
 res://bullet.tscn
@@ -24,3 +29,9 @@ res://scenes/candy.gd
 res://dzieckowoz.gd
 res://scenes/RUM.tscn
 res://scenes/RUM.gd
+=======
+res://returnButon.gd
+res://root.tscn
+res://soundVolume.gd
+res://default_bus_layout.tres
+>>>>>>> Stashed changes
