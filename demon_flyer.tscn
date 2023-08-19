@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://drdvbvs5dn6yn"]
+
+[ext_resource type="Script" path="res://demon_flyer.gd" id="1_q7581"]
+[ext_resource type="Texture2D" uid="uid://d4iwlowv0s0k5" path="res://textures/flyer_idle.png" id="2_ueu7y"]
+[ext_resource type="Material" uid="uid://ct1a2tfe0dut8" path="res://textures/kref.material" id="3_np6s2"]
+[ext_resource type="Material" uid="uid://kb55djouc5ph" path="res://textures/blood_floor.tres" id="4_27j0g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pv2w1"]
+radius = 17.4642
+
+[node name="demon" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_q7581")
+speed = 150.0
+
+[node name="82530246" type="Sprite2D" parent="."]
+position = Vector2(0, 2)
+texture = ExtResource("2_ueu7y")
+hframes = 11
+frame = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pv2w1")
+
+[node name="bullet_blood" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 1000
+sub_emitter = NodePath("../blood")
+process_material = ExtResource("3_np6s2")
+randomness = 0.1
+trail_lifetime = 0.13
+
+[node name="blood" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 100
+process_material = ExtResource("4_27j0g")
+lifetime = 30.0
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 128.0
+target_desired_distance = 128.0
+path_max_distance = 300.0
+path_postprocessing = 1
+debug_enabled = true

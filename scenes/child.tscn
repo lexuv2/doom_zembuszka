@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://cws13kwoe7kwq"]
+
+[ext_resource type="Script" path="res://scenes/child.gd" id="1_4t6h6"]
+[ext_resource type="Texture2D" uid="uid://b6qontwf5va7s" path="res://textures/child.png" id="2_f5ug8"]
+[ext_resource type="Texture2D" uid="uid://b3wo7ty0es5hv" path="res://textures/82530246.jpg" id="3_i4nnf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_68d2y"]
+height = 32.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1cse8"]
+radius = 21.0
+height = 66.0
+
+[node name="child" type="RigidBody2D"]
+mass = 30.0
+lock_rotation = true
+linear_damp = 2.0
+script = ExtResource("1_4t6h6")
+
+[node name="Child" type="Sprite2D" parent="."]
+texture = ExtResource("2_f5ug8")
+region_enabled = true
+region_rect = Rect2(34.0072, 33.2365, 30.0328, 31.121)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("CapsuleShape2D_68d2y")
+
+[node name="move_timer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_1cse8")
+
+[node name="tooltop" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1.90735e-06, -82)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_i4nnf")
+
+[connection signal="timeout" from="move_timer" to="." method="_on_move_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

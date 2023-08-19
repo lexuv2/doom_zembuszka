@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name character
 
 @export var SPEED = 300.0
 var hp = 5
@@ -13,6 +13,8 @@ var weapons  = ["res://scenes/shotgun.tscn","res://scenes/kar96k.tscn","res://ca
 var unlocks = [1,1,1,1,1]
 @export var damage_timeout=120
 var damage_timer=0;
+var dash_timer = 0;
+@export var dash_delay=60
 @export var sprite_left_boob_doom: Texture2D
 @export var sprite_left_boob_fairy: Texture2D
 
@@ -37,6 +39,7 @@ func change_dimension(dim: bool):
 func _physics_process(delta):
 	$Camera2D/CanvasLayer/DamageIndicator.modulate.a/=1.1
 	damage_timer+=1
+	dash_timer+=1
 	#get_node("/root/root").vertical_off=booba_v_offset
 
 	# Add the gravity.
@@ -53,6 +56,12 @@ func _physics_process(delta):
 		velocity.x += SPEED
 	if  Input.is_action_pressed("move_left"):
 		velocity.x -= SPEED
+	if  Input.is_action_just_pressed("dash"):
+		
+		if dash_timer > dash_delay:
+			dash_timer=0
+			velocity+=position.direction_to(get_global_mouse_position())*2000
+			$GPUParticles2D.emitting=true
 	sprite_rotation_target=velocity.x/800
 	velocity/=1.1
 	
@@ -89,6 +98,7 @@ func _physics_process(delta):
 		$gun_handler.set_weapon(weapons[3])
 	if Input.is_action_just_pressed("weapon5")and unlocks[4]:
 		$gun_handler.set_weapon(weapons[4])
+
 		
 		
 	var collisions = move_and_slide()

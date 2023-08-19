@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://t0wf5mei3iro"]
+[gd_scene load_steps=14 format=3 uid="uid://t0wf5mei3iro"]
 
 [ext_resource type="Script" path="res://character.gd" id="1_kd2mr"]
 [ext_resource type="Texture2D" uid="uid://b5qfi5xkbv8pd" path="res://faerie_idle_spritesheet_plus2pixel.png" id="2_yyrvc"]
@@ -74,6 +74,19 @@ _data = {
 "idle": SubResource("Animation_akjs5")
 }
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5rowl"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 10.0
+scale_max = 20.0
+color = Color(1, 1, 1, 0.384314)
+
 [node name="character" type="CharacterBody2D"]
 motion_mode = 1
 floor_stop_on_slope = false
@@ -118,3 +131,9 @@ script = ExtResource("5_cp6vo")
 libraries = {
 "": SubResource("AnimationLibrary_yqfy3")
 }
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_5rowl")
+lifetime = 0.3
+one_shot = true

@@ -4,9 +4,10 @@ class_name enemy
 @export var target: Node2D
 @export var speed: float = 10000
 @onready var agent := $NavigationAgent2D as NavigationAgent2D
-@export var target_refresh_time:int = 30
+@export var target_refresh_time:int = 30 
+var tooth = preload("res://scenes/tooth.tscn")
 var glob_direction
-
+@export var score =5 
 var  timer =0
 
 # Called when the node enters the scene tree for the first time.
@@ -45,6 +46,16 @@ func _physics_process(delta):
 			
 			body.queue_free()
 			if (hp<=0):
+				
+				for x in 0:
+					var tot = tooth.instantiate()
+					add_child(tot)
+					var rng = 50
+					tot.position+=Vector2(randi_range(-rng,rng),randi_range(-rng,rng))
+					tot.reparent(get_node("/root/root"))
+				
+				
+				
 				for x in range(0,50):
 					var blood_range = 120
 					$bullet_blood.emit_particle(Transform2D(),Vector2(randf_range(-blood_range,blood_range),randf_range(-blood_range,blood_range)),Color(),Color(),4)

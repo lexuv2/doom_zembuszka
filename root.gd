@@ -25,27 +25,29 @@ var p5 =preload("res://textures/psycha/Psycha5.png")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	if $character.sanity >= 5:
+	
+	$CanvasLayer/GridContainer/tooth_icon/Label.text = str($character.score)
+	if $character.psycha >= 5:
 		$CanvasLayer/GridContainer/sanity/TextureRect.texture=p5
 	else:
 		$CanvasLayer/GridContainer/health/TextureRect5.texture=Texture2D
 	
-	if $character.sanity >= 4:
+	if $character.psycha >= 4:
 		$CanvasLayer/GridContainer/sanity/TextureRect.texture=p4
 	else:
 		$CanvasLayer/GridContainer/health/TextureRect5.texture=Texture2D
 		
-	if $character.sanity >= 3:
+	if $character.psycha >= 3:
 		$CanvasLayer/GridContainer/sanity/TextureRect.texture=p3
 	else:
 		$CanvasLayer/GridContainer/health/TextureRect5.texture=Texture2D
 		
-	if $character.sanity >= 2:
+	if $character.psycha >= 2:
 		$CanvasLayer/GridContainer/sanity/TextureRect.texture=p2
 	else:
 		$CanvasLayer/GridContainer/health/TextureRect5.texture=Texture2D
 		
-	if $character.sanity >= 1:
+	if $character.psycha >= 1:
 		$CanvasLayer/GridContainer/sanity/TextureRect.texture=p1
 	else:
 		$CanvasLayer/GridContainer/health/TextureRect5.texture=Texture2D

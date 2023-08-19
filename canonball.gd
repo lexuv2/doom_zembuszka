@@ -35,7 +35,7 @@ func _physics_process(delta):
 				b.position = global_pos
 				get_node("/root").add_child(b)
 		timeout+=1
-		print("papaj")
+
 		
 		if timeout>120:
 			queue_free()

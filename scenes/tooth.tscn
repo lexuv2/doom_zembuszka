@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://5ki6ov5ltp8t"]
+
+[ext_resource type="Script" path="res://scenes/tooth.gd" id="1_1g7w0"]
+[ext_resource type="Texture2D" uid="uid://c8rj2y640ig1t" path="res://textures/ZombV2.png" id="2_kcduw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aa8mi"]
+radius = 9.0
+height = 26.0
+
+[sub_resource type="Curve" id="Curve_4ytgg"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.746421, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_wbsqu"]
+curve = SubResource("Curve_4ytgg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lgka2"]
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+damping_min = 10.0
+damping_max = 10.0
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_wbsqu")
+color = Color(1, 1, 0.709804, 1)
+
+[node name="tooth" type="Node2D"]
+script = ExtResource("1_1g7w0")
+blink_color = Color(0.952941, 0.831373, 0.0901961, 1)
+
+[node name="ZombV2" type="Sprite2D" parent="."]
+modulate = Color(0.999999, 0.999999, 0.999999, 1)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_kcduw")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_aa8mi")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 60
+process_material = SubResource("ParticleProcessMaterial_lgka2")
+lifetime = 0.2
+one_shot = true
+explosiveness = 1.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
