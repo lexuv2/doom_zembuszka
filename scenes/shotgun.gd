@@ -6,7 +6,7 @@ extends Node2D
 @export var camera_recoil = 100
 @export var move_recoil = 100
 @export var shoot_delay_frames = 60
-@export var shoot_number = 10
+@export var shoot_number = 5
 @export var spread= 0.5
 @export var damage=10
 @onready var animation_player = $AnimationPlayer
@@ -50,8 +50,10 @@ func _shoot():
 		b.where.x *= randf_range(1-spread,1+spread)
 		b.where.y *= randf_range(1-spread,1+spread)
 		
+		
 		b.rotation = global_pos.angle_to_point(get_global_mouse_position())
-		b.position = global_pos+global_pos.direction_to(get_global_mouse_position())*50+Vector2(randi_range(-20,20),randi_range(-20,20))
+		var p=5*x
+		b.position = global_pos+global_pos.direction_to(get_global_mouse_position())*50*Vector2.from_angle(x/6.0)
 		get_node("/root").add_child(b)
 		$shoot_sound.play()
 	
