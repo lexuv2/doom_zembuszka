@@ -47,11 +47,17 @@ func _physics_process(delta):
 			
 			body.queue_free()
 			if (hp<=0):
-				
+				var can = load("res://scenes/RUM.tscn").instantiate()
+				add_child(can)
+				var rng = 100
+				can.position+=Vector2(randi_range(-rng,rng),randi_range(-rng,rng))
+				can.reparent(get_node("/root/root"))
+		
+		
 				for x in 0:
 					var tot = tooth.instantiate()
 					add_child(tot)
-					var rng = 50
+					rng = 50
 					tot.position+=Vector2(randi_range(-rng,rng),randi_range(-rng,rng))
 					tot.reparent(get_node("/root/root"))
 				

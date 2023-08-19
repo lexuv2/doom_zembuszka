@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://t0wf5mei3iro"]
+[gd_scene load_steps=16 format=3 uid="uid://t0wf5mei3iro"]
 
 [ext_resource type="Script" path="res://character.gd" id="1_kd2mr"]
 [ext_resource type="Texture2D" uid="uid://b5qfi5xkbv8pd" path="res://faerie_idle_spritesheet_plus2pixel.png" id="2_yyrvc"]
@@ -12,6 +12,17 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6ekui"]
 radius = 17.0
 height = 62.0
+
+[sub_resource type="Gradient" id="Gradient_4lqmj"]
+colors = PackedColorArray(1, 1, 1, 0.666667, 0.807843, 0.807843, 0.807843, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_shest"]
+gradient = SubResource("Gradient_4lqmj")
+width = 1920
+height = 1080
+fill = 1
+fill_from = Vector2(0.545673, 0.465812)
+fill_to = Vector2(0.829327, 0)
 
 [sub_resource type="Animation" id="Animation_2w0sf"]
 length = 0.433337
@@ -119,6 +130,11 @@ script = ExtResource("3_x3j1a")
 [node name="DamageIndicator" type="Sprite2D" parent="Camera2D/CanvasLayer"]
 position = Vector2(960, 540)
 texture = ExtResource("6_p0xh8")
+
+[node name="Flashbang" type="Sprite2D" parent="Camera2D/CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(960, 540)
+texture = SubResource("GradientTexture2D_shest")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 

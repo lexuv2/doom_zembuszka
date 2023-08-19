@@ -21,6 +21,8 @@ var dash_timer = 0;
 @export var sprite_right_boob_doom: Texture2D
 @export var sprite_right_boob_fairy: Texture2D
 
+var flashbang=false
+
 var sprite_rotation_target=0.0
 func set_booba_offset(inp:int ):
 	booba_v_offset=inp
@@ -38,6 +40,13 @@ func change_dimension(dim: bool):
 		$fairy/FaerieBoobaRight.texture=sprite_right_boob_fairy
 	
 func _physics_process(delta):
+	if flashbang:
+		$Camera2D/CanvasLayer/Flashbang.modulate.a=clamp($Camera2D/CanvasLayer/Flashbang.modulate.a,0.4,100)
+		$Camera2D/CanvasLayer/Flashbang.modulate.a*=1.4
+		if $Camera2D/CanvasLayer/Flashbang.modulate.a>0.9:
+			flashbang=false
+	else:
+		$Camera2D/CanvasLayer/Flashbang.modulate.a/=1.1
 	$Camera2D/CanvasLayer/DamageIndicator.modulate.a/=1.1
 	damage_timer+=1
 	dash_timer+=1
@@ -80,6 +89,7 @@ func _physics_process(delta):
 	
 	
 	if Input.is_action_just_pressed("change_dimmension"):
+		flashbang=true
 		dimension=!dimension
 		change_dimension(dimension)
 	if Input.is_action_just_pressed("lmb"):

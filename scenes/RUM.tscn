@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://dp0pgckmc7ndt"]
+
+[ext_resource type="Script" path="res://scenes/RUM.gd" id="1_sqst4"]
+[ext_resource type="Texture2D" uid="uid://dw70d47y210wx" path="res://scenes/szlugi-sheet.png" id="2_eqpy1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aa8mi"]
+radius = 16.0
+height = 32.0
+
+[sub_resource type="Curve" id="Curve_4ytgg"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.746421, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_wbsqu"]
+curve = SubResource("Curve_4ytgg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lgka2"]
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+damping_min = 10.0
+damping_max = 10.0
+scale_min = 2.0
+scale_max = 6.0
+scale_curve = SubResource("CurveTexture_wbsqu")
+color = Color(0.878431, 1, 0, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cqfhx"]
+
+[node name="candy" type="RigidBody2D"]
+linear_damp = 1.0
+script = ExtResource("1_sqst4")
+
+[node name="ZombV2" type="Sprite2D" parent="."]
+modulate = Color(0.999999, 0.999999, 0.999999, 1)
+texture = ExtResource("2_eqpy1")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_aa8mi")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 60
+process_material = SubResource("ParticleProcessMaterial_lgka2")
+lifetime = 0.4
+one_shot = true
+explosiveness = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cqfhx")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

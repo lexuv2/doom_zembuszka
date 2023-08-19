@@ -11,7 +11,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$ZombV2.visible=!get_node("/root/root").dimension	
+	$ZombV2.visible=get_node("/root/root").dimension	
 	collision_layer=$ZombV2.visible
 	collision_mask=$ZombV2.visible
 	if papaj:
