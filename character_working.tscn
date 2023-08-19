@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://t0wf5mei3iro"]
+[gd_scene load_steps=13 format=3 uid="uid://t0wf5mei3iro"]
 
 [ext_resource type="Script" path="res://character.gd" id="1_kd2mr"]
 [ext_resource type="Texture2D" uid="uid://b5qfi5xkbv8pd" path="res://faerie_idle_spritesheet_plus2pixel.png" id="2_yyrvc"]
@@ -6,7 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://v8bb4uyj5u34" path="res://faerie_booba_left.png" id="5_angah"]
 [ext_resource type="Script" path="res://gun_handler.gd" id="5_cp6vo"]
 [ext_resource type="Texture2D" uid="uid://dtmv1q2sk6wc0" path="res://faerie_booba_right.png" id="6_htnr4"]
-[ext_resource type="PackedScene" uid="uid://wm1oymjfgqk7" path="res://scenes/kar96k.tscn" id="7_dvh1w"]
+[ext_resource type="Texture2D" uid="uid://4tnjor7gx1l2" path="res://textures/damage_indicator.tres" id="6_p0xh8"]
+[ext_resource type="PackedScene" uid="uid://iyvhc2g4r5y1" path="res://cannon.tscn" id="7_f6fbs"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6ekui"]
 radius = 17.0
@@ -100,14 +101,18 @@ position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 script = ExtResource("3_x3j1a")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+
+[node name="DamageIndicator" type="Sprite2D" parent="Camera2D/CanvasLayer"]
+position = Vector2(960, 540)
+texture = ExtResource("6_p0xh8")
+
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 
 [node name="gun_handler" type="Node2D" parent="."]
 script = ExtResource("5_cp6vo")
 
-[node name="gun" parent="gun_handler" instance=ExtResource("7_dvh1w")]
-camera_recoil = 50
-shoot_number = 1
+[node name="shotgun" parent="gun_handler" instance=ExtResource("7_f6fbs")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

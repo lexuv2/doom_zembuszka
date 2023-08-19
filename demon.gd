@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name enemy
 @export var hp = 100
 @export var target: Node2D
 @export var speed: float = 10000
@@ -37,11 +37,17 @@ func _physics_process(delta):
 			$bullet_blood.rotation = body.rotation
 			for x in range(0,50):
 				$bullet_blood.emit_particle(Transform2D(),Vector2.ZERO,Color(),Color(),0)
+			for x in range(0,5):
+				var blood_range = 30
+				$blood.emit_particle(Transform2D(),Vector2(randf_range(-blood_range,blood_range),randf_range(-blood_range,blood_range)),Color(),Color(),4)
 			print(body)
-			hp-=30;
+			hp-=body.damage
 			
 			body.queue_free()
 			if (hp<=0):
+				for x in range(0,50):
+					var blood_range = 120
+					$bullet_blood.emit_particle(Transform2D(),Vector2(randf_range(-blood_range,blood_range),randf_range(-blood_range,blood_range)),Color(),Color(),4)
 				$bullet_blood.reparent(get_node("/root/root"))
 				$blood.reparent(get_node("/root/root"))
 				queue_free()

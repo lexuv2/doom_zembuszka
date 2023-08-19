@@ -8,8 +8,9 @@ extends Node2D
 @export var shoot_delay_frames = 60
 @export var shoot_number = 10
 @export var spread= 0.5
+@export var damage=10
 @onready var animation_player = $AnimationPlayer
-var delay = 0
+var delay = 100
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -43,6 +44,7 @@ func _shoot():
 	get_parent().recoil()
 	for x in range(0,shoot_number):
 		var b = bullet.instantiate()
+		b.damage=damage
 		b.where = global_pos.direction_to(get_global_mouse_position())
 		
 		b.where.x *= randf_range(1-spread,1+spread)

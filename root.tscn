@@ -1,8 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://b2gns5uq3xa8n"]
+[gd_scene load_steps=26 format=3 uid="uid://b2gns5uq3xa8n"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_hjnfc"]
 [ext_resource type="PackedScene" uid="uid://bw08oun4htikl" path="res://scenes/booba.tscn" id="1_jb7nx"]
-[ext_resource type="Texture2D" uid="uid://dtr00e1xhnpna" path="res://textures/tileset_hell.png" id="2_va7lx"]
+[ext_resource type="Texture2D" uid="uid://dtr00e1xhnpna" path="res://tileset_hell.png" id="2_1r8p7"]
 [ext_resource type="PackedScene" uid="uid://t0wf5mei3iro" path="res://character_working.tscn" id="3_ise32"]
 [ext_resource type="Theme" uid="uid://c3doc5dml7lkv" path="res://doom_theme.tres" id="4_2cgt6"]
 [ext_resource type="Texture2D" uid="uid://c8rj2y640ig1t" path="res://textures/ZombV2.png" id="4_5prvw"]
@@ -18,8 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://cesqhn60gxkvm" path="res://textures/psycha/Psycha3.png" id="9_7hghp"]
 [ext_resource type="Texture2D" uid="uid://cvf3x00softwu" path="res://textures/psycha/Psycha4.png" id="10_o81a7"]
 [ext_resource type="Texture2D" uid="uid://dshive047741y" path="res://textures/psycha/Psycha5.png" id="11_hniqk"]
-[ext_resource type="Texture2D" uid="uid://bmae37p0p601p" path="res://textures/serce.png" id="12_slgm2"]
+[ext_resource type="Texture2D" uid="uid://cmsrwr8a81u3r" path="res://textures/sercegit.png" id="18_n0542"]
 [ext_resource type="PackedScene" uid="uid://bctat1u1j0s4r" path="res://demon_base.tscn" id="20_nhg8s"]
+[ext_resource type="PackedScene" uid="uid://cde77dnk8n4kx" path="res://demon_bastard.tscn" id="21_endo8"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mk2g6"]
 vertices = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
@@ -30,7 +31,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -32, 32, -32, 32, 
 polygon = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rm6rf"]
-texture = ExtResource("2_va7lx")
+texture = ExtResource("2_1r8p7")
 texture_region_size = Vector2i(64, 64)
 4:0/0 = 0
 4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -347,54 +348,63 @@ offset_bottom = 65.0
 theme = ExtResource("4_2cgt6")
 text = "2137"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/GridContainer"]
+[node name="sanity" type="HBoxContainer" parent="CanvasLayer/GridContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GridContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GridContainer/sanity"]
 layout_mode = 2
 texture = ExtResource("7_6noex")
 
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/GridContainer/HBoxContainer"]
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/GridContainer/sanity"]
 layout_mode = 2
 texture = ExtResource("8_e3eqd")
 
-[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/GridContainer/HBoxContainer"]
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/GridContainer/sanity"]
 layout_mode = 2
 texture = ExtResource("9_7hghp")
 
-[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/GridContainer/HBoxContainer"]
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/GridContainer/sanity"]
 layout_mode = 2
 texture = ExtResource("10_o81a7")
 
-[node name="TextureRect5" type="TextureRect" parent="CanvasLayer/GridContainer/HBoxContainer"]
+[node name="TextureRect5" type="TextureRect" parent="CanvasLayer/GridContainer/sanity"]
 layout_mode = 2
 texture = ExtResource("11_hniqk")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/GridContainer"]
+[node name="health" type="HBoxContainer" parent="CanvasLayer/GridContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GridContainer/HBoxContainer2"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GridContainer/health"]
 layout_mode = 2
-texture = ExtResource("12_slgm2")
+texture = ExtResource("18_n0542")
+expand_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/GridContainer/HBoxContainer2"]
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/GridContainer/health"]
 layout_mode = 2
-texture = ExtResource("12_slgm2")
+texture = ExtResource("18_n0542")
+expand_mode = 2
 
-[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/GridContainer/HBoxContainer2"]
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/GridContainer/health"]
 layout_mode = 2
-texture = ExtResource("12_slgm2")
+texture = ExtResource("18_n0542")
+expand_mode = 2
 
-[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/GridContainer/HBoxContainer2"]
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/GridContainer/health"]
 layout_mode = 2
-texture = ExtResource("12_slgm2")
+texture = ExtResource("18_n0542")
+expand_mode = 2
 
-[node name="TextureRect5" type="TextureRect" parent="CanvasLayer/GridContainer/HBoxContainer2"]
+[node name="TextureRect5" type="TextureRect" parent="CanvasLayer/GridContainer/health"]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("12_slgm2")
+texture = ExtResource("18_n0542")
+expand_mode = 1
 
 [node name="demon" parent="." instance=ExtResource("5_lswl2")]
 position = Vector2(295, 255)
 
 [node name="demon2" parent="." instance=ExtResource("20_nhg8s")]
 position = Vector2(455, -186)
+
+[node name="demon3" parent="." instance=ExtResource("21_endo8")]
+position = Vector2(-360, -101)

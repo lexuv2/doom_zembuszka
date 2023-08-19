@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c84ktr7ba5skp"
-path="res://.godot/imported/124130_1280_720.webp-77c227de302704224dccb60319b99ae3.ctex"
+uid="uid://dtr00e1xhnpna"
+path="res://.godot/imported/tileset_hell.png-5e9da038ce61dba48642e9c840d02366.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/124130_1280_720.webp"
-dest_files=["res://.godot/imported/124130_1280_720.webp-77c227de302704224dccb60319b99ae3.ctex"]
+source_file="res://tileset_hell.png"
+dest_files=["res://.godot/imported/tileset_hell.png-5e9da038ce61dba48642e9c840d02366.ctex"]
 
 [params]
 

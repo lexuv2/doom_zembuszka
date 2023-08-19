@@ -1,44 +1,45 @@
-[gd_scene load_steps=6 format=3 uid="uid://bctat1u1j0s4r"]
+[gd_scene load_steps=6 format=3 uid="uid://cde77dnk8n4kx"]
 
-[ext_resource type="Script" path="res://demon.gd" id="1_pewgv"]
-[ext_resource type="Texture2D" uid="uid://8cberns13vts" path="res://textures/demon_oko.png" id="2_ae6os"]
-[ext_resource type="Material" uid="uid://ct1a2tfe0dut8" path="res://textures/kref.material" id="3_nxfjt"]
-[ext_resource type="Material" uid="uid://kb55djouc5ph" path="res://textures/blood_floor.tres" id="4_rt5k3"]
+[ext_resource type="Script" path="res://demon.gd" id="1_kofv6"]
+[ext_resource type="Texture2D" uid="uid://ccvbd36pije23" path="res://textures/demon_bastard.png" id="2_uvssc"]
+[ext_resource type="Material" uid="uid://ct1a2tfe0dut8" path="res://textures/kref.material" id="3_mk0b6"]
+[ext_resource type="Material" uid="uid://kb55djouc5ph" path="res://textures/blood_floor.tres" id="4_fqif0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pv2w1"]
-radius = 56.5685
+radius = 32.0624
 
 [node name="demon" type="CharacterBody2D"]
 motion_mode = 1
-script = ExtResource("1_pewgv")
-speed = 150.0
+script = ExtResource("1_kofv6")
+hp = 40
+speed = 120.0
 
 [node name="82530246" type="Sprite2D" parent="."]
 position = Vector2(7, -21)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_ae6os")
+texture = ExtResource("2_uvssc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(6, -21)
+position = Vector2(-5, -12)
 shape = SubResource("CircleShape2D_pv2w1")
 
 [node name="bullet_blood" type="GPUParticles2D" parent="."]
 emitting = false
 amount = 1000
 sub_emitter = NodePath("../blood")
-process_material = ExtResource("3_nxfjt")
+process_material = ExtResource("3_mk0b6")
 randomness = 0.1
 trail_lifetime = 0.13
 
 [node name="blood" type="GPUParticles2D" parent="."]
 emitting = false
 amount = 100
-process_material = ExtResource("4_rt5k3")
+process_material = ExtResource("4_fqif0")
 lifetime = 30.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_desired_distance = 128.0
-target_desired_distance = 128.0
+target_desired_distance = 300.0
 path_max_distance = 300.0
 path_postprocessing = 1
 debug_enabled = true

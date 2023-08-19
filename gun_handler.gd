@@ -7,6 +7,11 @@ var global_pos = Vector2.ZERO
 func _ready():
 	pass # Replace with function body.
 
+func set_weapon(weapon):
+	get_child(0).queue_free()
+	var new_gun = load(weapon).instantiate()
+	add_child(new_gun)
+
 func shoot():
 	var gun = get_child(0)
 	

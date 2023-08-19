@@ -12,3 +12,13 @@ res://canonball.tscn
 res://scenes/wall_mask.tscn
 res://demon_base.tscn
 res://demon_gruby.gd
+res://bullet.gd
+res://scenes/shotgun.gd
+res://canonball.gd
+res://demon_bastard.tscn
+res://character.gd
+res://gun_handler.gd
+res://textures/damage_indicator.tres
+res://root.gd
+res://textures/kref.material
+res://textures/blood_floor.tres

@@ -141,6 +141,7 @@ automatic_shoot = false
 camera_recoil = 150
 move_recoil = 500
 shoot_number = 1
+damage = 20
 
 [node name="gun_sprite" parent="." index="0"]
 position = Vector2(1, -5)

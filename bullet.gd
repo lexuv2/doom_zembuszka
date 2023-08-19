@@ -3,6 +3,7 @@ extends RigidBody2D
 
 # Called when the node enters the scene tree for the first time.
 @export var speed = 100
+var damage=10
 var life = 0
 var timeout=0
 var where:Vector2

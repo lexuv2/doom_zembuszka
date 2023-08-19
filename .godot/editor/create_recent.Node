@@ -1,3 +1,4 @@
+CanvasLayer
 Timer
 CharacterBody2D
 NavigationAgent2D
@@ -20,6 +21,5 @@ Label
 ColorRect
 VBoxContainer
 GridContainer
-CanvasLayer
 AudioListener2D
 Camera2D
