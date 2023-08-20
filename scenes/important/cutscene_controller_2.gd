@@ -92,6 +92,6 @@ func _process(delta):
 	
 	pass
 func tut():
-	get_tree().change_scene("res://scenes/important/tutorial.tscn")
+	get_tree().change_scene_to_file("res://scenes/important/tutorial.tscn")
 func _physics_process(delta):
 	pass

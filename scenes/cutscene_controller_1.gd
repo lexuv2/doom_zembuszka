@@ -52,14 +52,16 @@ func _physics_process(delta):
 		$"../../character/NavigationAgent2D".target_position=$"../../Marker2D".position
 		$"../../character".velocity=$"../../character".position.direction_to($"../../character/NavigationAgent2D".get_next_path_position())*100
 		$"../../character".move_and_slide()
-
+var started =false
 func _on_timer_timeout():
 	$"../../character/NavigationAgent2D".target_position=$"../../Marker2D".position
 	move_fairy=true
-	$"../Timer_outro".start()
+	if not started:
+		$"../Timer_outro".start()
+		started=true
 	pass # Replace with function body.
 
 
 func _on_timer_outro_timeout():
-	get_tree().change_scene("res://scenes/important/scene2.tscn")
+	get_tree().change_scene_to_file("res://scenes/important/scene2.tscn")
 	pass # Replace with function body.
