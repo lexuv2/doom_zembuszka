@@ -26,7 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://bctat1u1j0s4r" path="res://demon_base.tscn" id="20_nhg8s"]
 [ext_resource type="PackedScene" uid="uid://cde77dnk8n4kx" path="res://demon_bastard.tscn" id="21_endo8"]
 [ext_resource type="PackedScene" uid="uid://drdvbvs5dn6yn" path="res://demon_flyer.tscn" id="22_su5k4"]
-[ext_resource type="PackedScene" uid="uid://dhmicqok8siux" path="res://scenes/important/collect_teeth.tscn" id="24_vjpb8"]
+[ext_resource type="PackedScene" path="res://scenes/important/collect_teeth.tscn" id="24_vjpb8"]
 [ext_resource type="PackedScene" uid="uid://cws13kwoe7kwq" path="res://scenes/child.tscn" id="26_qjxgv"]
 [ext_resource type="Script" path="res://dzieckowoz.gd" id="27_cuboh"]
 
