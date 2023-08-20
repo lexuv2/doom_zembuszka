@@ -37,7 +37,7 @@ offset_bottom = 180.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 100
-text = "GAM OVER"
+text = "GAME OVER"
 
 [node name="restart" type="Button" parent="Control"]
 layout_mode = 1
