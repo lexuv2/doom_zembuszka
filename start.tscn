@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://das6607befrl8"]
+[gd_scene load_steps=5 format=3 uid="uid://das6607befrl8"]
 
 [ext_resource type="Theme" uid="uid://dqbbqyqyp6duk" path="res://fairy_theme.tres" id="1_rf658"]
 [ext_resource type="Script" path="res://start_button.gd" id="2_ipnit"]
+[ext_resource type="Script" path="res://EXITY.gd" id="4_ldxjb"]
 [ext_resource type="Script" path="res://soundVolume.gd" id="5_ofv7g"]
 
 [node name="start" type="Control"]
@@ -58,8 +59,8 @@ anchors_preset = -1
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 20.0
-offset_top = -109.0
-offset_right = 264.0
+offset_top = -78.0
+offset_right = 272.0
 offset_bottom = -20.0
 grow_vertical = 0
 alignment = 1
@@ -68,7 +69,7 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 61
+theme_override_font_sizes/font_size = 56
 text = "VOLUME"
 
 [node name="soundVolume" type="HSlider" parent="VBoxContainer"]
@@ -78,5 +79,24 @@ min_value = -45.0
 max_value = 1.0
 script = ExtResource("5_ofv7g")
 
+[node name="EXITY" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -197.0
+offset_top = -63.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 56
+text = "EXIT"
+flat = true
+script = ExtResource("4_ldxjb")
+
 [connection signal="pressed" from="start_button" to="start_button" method="_on_pressed"]
 [connection signal="value_changed" from="VBoxContainer/soundVolume" to="VBoxContainer/soundVolume" method="_on_value_changed"]
+[connection signal="pressed" from="EXITY" to="EXITY" method="_on_pressed"]
