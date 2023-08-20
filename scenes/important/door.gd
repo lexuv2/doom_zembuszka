@@ -2,6 +2,7 @@ class_name door
 
 extends Node2D
 @export var tooth_cap = 100
+@export var min_tooth_cap=0
 @export var enabled=false
 @export var next_door: door
 @export var spawners: Array[Node2D]
@@ -14,11 +15,14 @@ var opened = false
 func _process(delta):
 	for x in spawners:
 		x.turned_on=enabled
-	if next_door!=null and next_door.enabled:
-		enabled=false
-	if (get_tree().root.get_child(0).player_tooths >tooth_cap ) and not opened:
+	if min_tooth_cap<=get_tree().root.get_child(0).player_tooths:
+		enabled=true
+		
+	if (get_tree().root.get_child(0).player_tooths >=tooth_cap ) and not opened:
 		get_tree().root.get_child(0).get_node("demoniarnia").kill()
 		$Sprite2D.frame=0
 		$StaticBody2D.queue_free()
+		opened=true
+		enabled=false
 		pass
 	pass
