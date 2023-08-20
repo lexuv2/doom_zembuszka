@@ -17,6 +17,7 @@ func _process(delta):
 		x.turned_on=enabled
 	if min_tooth_cap<=get_tree().root.get_child(0).player_tooths:
 		enabled=true
+		get_tree().root.get_child(0).teeth_cap=tooth_cap
 		
 	if (get_tree().root.get_child(0).player_tooths >=tooth_cap ) and not opened:
 		get_tree().root.get_child(0).get_node("demoniarnia").kill()
@@ -31,7 +32,7 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body is character:
-		$Sprite2D.frame=4
+		$Sprite2D.frame=3
 		$StaticBody2D.collision_layer=1
 		$StaticBody2D.collision_mask=1
 	pass # Replace with function body.
