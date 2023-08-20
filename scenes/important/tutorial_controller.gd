@@ -73,5 +73,5 @@ func _on_area_2d_2_body_entered(body):
 
 
 func _on_timer_timeout():
-	get_tree().change_scene("res://root.tscn")
+	get_tree().change_scene_to_file("res://root.tscn")
 	pass # Replace with function body.
