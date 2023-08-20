@@ -1,8 +1,8 @@
 extends Node2D
-
+class_name spawner
 @export var le_creatura: PackedScene
 @export var target_node: String
-@export var turned_on: bool
+@export var turned_on: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,6 +10,8 @@ func _ready() -> void:
 
 
 func _on_timer_timeout() -> void:
+	if not turned_on:
+		return
 	var bahor = le_creatura.instantiate()
 	var spawn_loc = position
 	
