@@ -41,6 +41,7 @@ func _process(delta):
 		add_child(box)
 		dialog_ind+=1
 		$"../../character".lock_controlls=true
+		$"../Timer_outro".start()
 		$Timer.start()
 
 	
