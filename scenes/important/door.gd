@@ -17,10 +17,12 @@ func _process(delta):
 		x.turned_on=enabled
 	if min_tooth_cap<=get_tree().root.get_child(0).player_tooths:
 		enabled=true
+		
 		get_tree().root.get_child(0).teeth_cap=tooth_cap
 		
 	if (get_tree().root.get_child(0).player_tooths >=tooth_cap ) and not opened:
 		get_tree().root.get_child(0).get_node("demoniarnia").kill()
+		get_tree().root.get_child(0).open_door_pos=position
 		$Sprite2D.frame=0
 		$StaticBody2D.collision_layer=0
 		$StaticBody2D.collision_mask=0
