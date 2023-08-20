@@ -1,0 +1,24 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://iykwscrilj1w"]
+
+[ext_resource type="FontFile" uid="uid://tti3vuv26yuq" path="res://scenes/important/Cutesy.ttf" id="1_mtns0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3rtss"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.788235, 0.6, 0.486275, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[resource]
+default_font = ExtResource("1_mtns0")
+default_font_size = 42
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_3rtss")

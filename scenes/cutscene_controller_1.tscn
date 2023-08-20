@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bi35725ai17ay"]
+
+[ext_resource type="Script" path="res://scenes/cutscene_controller_1.gd" id="1_npbta"]
+
+[node name="cutscene_controller_1" type="Node2D"]
+script = ExtResource("1_npbta")

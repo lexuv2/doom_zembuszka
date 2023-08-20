@@ -19,19 +19,19 @@ func _physics_process(delta):
 		$tooltop.visible=true
 	else:
 		$tooltop.visible=false
-	if Input.is_action_pressed("interact") and not obtained and character_in_child and not get_node("/root/root").dimension:
+	if Input.is_action_pressed("interact") and not obtained and character_in_child and not get_tree().root.get_child(0).dimension:
 		obtained=true
 		for x in score:
 			var tot = tooth.instantiate()
 			add_child(tot)
 			var rng = 100
 			tot.position+=Vector2(randi_range(-rng,rng),randi_range(-rng,rng))
-			tot.reparent(get_node("/root/root"))
+			tot.reparent(get_tree().root.get_child(0))
 		var can = load("res://scenes/candy.tscn").instantiate()
 		add_child(can)
 		var rng = 100
 		can.position+=Vector2(randi_range(-rng,rng),randi_range(-rng,rng))
-		can.reparent(get_node("/root/root"))
+		can.reparent(get_tree().root.get_child(0))
 		var c = 0.4;
 		$Child.modulate-=Color(c,c,c,c)
 	pass
@@ -56,4 +56,10 @@ func _on_area_2d_body_entered(body):
 func _on_area_2d_body_exited(body):
 	if body is character:
 		character_in_child=false
+	pass # Replace with function body.
+
+
+func _on_timer_timeout():
+	$tooltop.frame=!$tooltop.frame
+	$Timer.start()
 	pass # Replace with function body.

@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs6eujeiu2uts"]
+
+[ext_resource type="Theme" uid="uid://iykwscrilj1w" path="res://scenes/important/text_box_theme.tres" id="1_nq187"]
+[ext_resource type="Script" path="res://scenes/important/dialog_box.gd" id="2_kfluw"]
+
+[node name="dialog_box" type="Control"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1037.0
+offset_top = 790.0
+offset_right = -208.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+theme = ExtResource("1_nq187")
+script = ExtResource("2_kfluw")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(960, 320)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.923
+anchor_top = -0.93
+anchor_right = 0.759
+anchor_bottom = 0.5
+offset_left = 120.025
+offset_top = 80.7
+offset_right = -55.325
+offset_bottom = -14.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Fucking hangover... "
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2

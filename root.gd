@@ -4,13 +4,17 @@ var booba_marker_left = Vector2.ZERO
 var booba_marker_right = Vector2.ZERO
 var vertical_off=0
 var player_hp
-var dimension = true
+@export var dimension = true
 var player_sanity
-var player_tooths
+var player_tooths=0
 var heart=preload("res://textures/sercegit.png")
+@export var cutscene_mode:bool=false
+@export var lock_dim:bool = false
 
 
 func change_diemnsion(dim: bool):
+	if lock_dim:
+		return
 	#1- hell
 	#0-fae
 	dimension=dim
@@ -113,6 +117,7 @@ func _physics_process(delta):
 
 	booba_marker_left=$booba_l.position
 	booba_marker_right=$booba_r.position
+	player_tooths=$character.score
 	pass
 	
 	
@@ -124,3 +129,7 @@ func _input(event: InputEvent) -> void:
 			get_tree().paused = false
 		else:
 			get_tree().paused = true
+
+
+func _on_timer_outro_timeout():
+	pass # Replace with function body.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://b2gns5uq3xa8n"]
+[gd_scene load_steps=32 format=3 uid="uid://b2gns5uq3xa8n"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_hjnfc"]
 [ext_resource type="PackedScene" uid="uid://bw08oun4htikl" path="res://scenes/booba.tscn" id="1_jb7nx"]
@@ -7,12 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://2haos7prc4ck" path="res://textures/tileset_lava.png" id="3_q1jxr"]
 [ext_resource type="Theme" uid="uid://c3doc5dml7lkv" path="res://doom_theme.tres" id="4_2cgt6"]
 [ext_resource type="Texture2D" uid="uid://c8rj2y640ig1t" path="res://textures/ZombV2.png" id="4_5prvw"]
-[ext_resource type="Texture2D" uid="uid://bdlsfu2d5m721" path="res://textures/tileset_fae.png" id="4_kdfmt"]
 [ext_resource type="Texture2D" uid="uid://b5qfi5xkbv8pd" path="res://faerie_idle_spritesheet_plus2pixel.png" id="4_olet7"]
-[ext_resource type="Texture2D" uid="uid://d3eribyfu8pe1" path="res://textures/tileset_water.png" id="5_a1s67"]
 [ext_resource type="Texture2D" uid="uid://biyqdcrstqrk5" path="res://textures/faerie_fae_idle_spritesheet.png" id="5_hsnad"]
 [ext_resource type="PackedScene" uid="uid://1a7x8mul4ksb" path="res://demon_gruby.tscn" id="5_lswl2"]
-[ext_resource type="Texture2D" uid="uid://xi3wrducle0g" path="res://scenes/tileset_grass.png" id="6_fqyi7"]
 [ext_resource type="Texture2D" uid="uid://v8bb4uyj5u34" path="res://faerie_booba_left.png" id="6_qbc28"]
 [ext_resource type="Texture2D" uid="uid://v7kcai3p6duv" path="res://textures/faerie_fae_booba_left.png" id="7_2wwn1"]
 [ext_resource type="Texture2D" uid="uid://cg0m6rel464rt" path="res://textures/psycha/Psycha1.png" id="7_6noex"]
@@ -320,149 +317,11 @@ navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_rm6rf")
 sources/1 = SubResource("TileSetAtlasSource_yo0k2")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1l74j"]
-texture = ExtResource("4_kdfmt")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-5:0/0/terrain_set = 0
-5:0/0/terrain = 0
-5:0/0/terrains_peering_bit/right_side = 0
-5:0/0/terrains_peering_bit/bottom_side = 0
-6:0/0 = 0
-6:0/0/terrain_set = 0
-6:0/0/terrain = 0
-6:0/0/terrains_peering_bit/right_side = 0
-6:0/0/terrains_peering_bit/bottom_side = 0
-6:0/0/terrains_peering_bit/left_side = 0
-7:0/0 = 0
-7:0/0/terrain_set = 0
-7:0/0/terrain = 0
-7:0/0/terrains_peering_bit/bottom_side = 0
-7:0/0/terrains_peering_bit/left_side = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-4:1/0/terrain_set = 0
-4:1/0/terrain = 0
-4:1/0/terrains_peering_bit/right_side = 0
-4:1/0/terrains_peering_bit/bottom_side = 0
-4:1/0/terrains_peering_bit/left_side = 0
-4:1/0/terrains_peering_bit/top_side = 0
-5:1/0 = 0
-5:1/0/terrain_set = 0
-5:1/0/terrain = 0
-5:1/0/terrains_peering_bit/right_side = 0
-5:1/0/terrains_peering_bit/bottom_side = 0
-5:1/0/terrains_peering_bit/top_side = 0
-6:1/0 = 0
-6:1/0/terrain_set = 0
-6:1/0/terrain = 0
-6:1/0/terrains_peering_bit/right_side = 0
-6:1/0/terrains_peering_bit/bottom_side = 0
-6:1/0/terrains_peering_bit/left_side = 0
-6:1/0/terrains_peering_bit/top_side = 0
-7:1/0 = 0
-7:1/0/terrain_set = 0
-7:1/0/terrain = 0
-7:1/0/terrains_peering_bit/bottom_side = 0
-7:1/0/terrains_peering_bit/left_side = 0
-7:1/0/terrains_peering_bit/top_side = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-5:2/0/terrain_set = 0
-5:2/0/terrain = 0
-5:2/0/terrains_peering_bit/right_side = 0
-5:2/0/terrains_peering_bit/top_side = 0
-6:2/0 = 0
-6:2/0/terrain_set = 0
-6:2/0/terrain = 0
-6:2/0/terrains_peering_bit/right_side = 0
-6:2/0/terrains_peering_bit/left_side = 0
-6:2/0/terrains_peering_bit/top_side = 0
-7:2/0 = 0
-7:2/0/terrain_set = 0
-7:2/0/terrain = 0
-7:2/0/terrains_peering_bit/left_side = 0
-7:2/0/terrains_peering_bit/top_side = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-6:4/0 = 0
-7:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-6:5/0 = 0
-7:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-3:6/0 = 0
-4:6/0 = 0
-5:6/0 = 0
-6:6/0 = 0
-7:6/0 = 0
-0:7/0 = 0
-1:7/0 = 0
-2:7/0 = 0
-3:7/0 = 0
-4:7/0 = 0
-5:7/0 = 0
-6:7/0 = 0
-7:7/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ww5x"]
-texture = ExtResource("5_a1s67")
-texture_region_size = Vector2i(64, 64)
-0:0/animation_columns = 4
-0:0/animation_speed = 5.0
-0:0/animation_frame_0/duration = 1.0
-0:0/animation_frame_1/duration = 1.0
-0:0/animation_frame_2/duration = 1.0
-0:0/animation_frame_3/duration = 1.0
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wchyp"]
-texture = ExtResource("6_fqyi7")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-
 [sub_resource type="TileSet" id="TileSet_hgveb"]
 tile_size = Vector2i(64, 64)
 terrain_set_0/mode = 2
 terrain_set_0/terrain_0/name = "papaj"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-sources/0 = SubResource("TileSetAtlasSource_1l74j")
-sources/1 = SubResource("TileSetAtlasSource_8ww5x")
-sources/2 = SubResource("TileSetAtlasSource_wchyp")
 
 [node name="root" type="Node2D"]
 script = ExtResource("1_hjnfc")
@@ -505,43 +364,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 theme = ExtResource("4_2cgt6")
 
-[node name="tooth_icon" type="TextureRect" parent="CanvasLayer/GridContainer"]
-layout_mode = 2
-texture = ExtResource("4_5prvw")
-stretch_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/GridContainer/tooth_icon"]
-layout_mode = 0
-offset_left = 60.0
-offset_top = 4.0
-offset_right = 133.0
-offset_bottom = 65.0
-theme = ExtResource("4_2cgt6")
-text = "2137"
-
-[node name="sanity" type="HBoxContainer" parent="CanvasLayer/GridContainer"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GridContainer/sanity"]
-layout_mode = 2
-texture = ExtResource("7_6noex")
-
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/GridContainer/sanity"]
-layout_mode = 2
-texture = ExtResource("8_e3eqd")
-
-[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/GridContainer/sanity"]
-layout_mode = 2
-texture = ExtResource("9_7hghp")
-
-[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/GridContainer/sanity"]
-layout_mode = 2
-texture = ExtResource("10_o81a7")
-
-[node name="TextureRect5" type="TextureRect" parent="CanvasLayer/GridContainer/sanity"]
-layout_mode = 2
-texture = ExtResource("11_hniqk")
-
 [node name="health" type="HBoxContainer" parent="CanvasLayer/GridContainer"]
 layout_mode = 2
 
@@ -570,6 +392,43 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = ExtResource("18_n0542")
 expand_mode = 1
+
+[node name="sanity" type="HBoxContainer" parent="CanvasLayer/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GridContainer/sanity"]
+layout_mode = 2
+texture = ExtResource("7_6noex")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/GridContainer/sanity"]
+layout_mode = 2
+texture = ExtResource("8_e3eqd")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/GridContainer/sanity"]
+layout_mode = 2
+texture = ExtResource("9_7hghp")
+
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/GridContainer/sanity"]
+layout_mode = 2
+texture = ExtResource("10_o81a7")
+
+[node name="TextureRect5" type="TextureRect" parent="CanvasLayer/GridContainer/sanity"]
+layout_mode = 2
+texture = ExtResource("11_hniqk")
+
+[node name="tooth_icon" type="TextureRect" parent="CanvasLayer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("4_5prvw")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/GridContainer/tooth_icon"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 4.0
+offset_right = 133.0
+offset_bottom = 65.0
+theme = ExtResource("4_2cgt6")
+text = "2137"
 
 [node name="dzieckowoz" type="Node2D" parent="."]
 script = ExtResource("27_cuboh")
