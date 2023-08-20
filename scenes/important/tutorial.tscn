@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://kexymfsxgvwr"]
+[gd_scene load_steps=24 format=3 uid="uid://kexymfsxgvwr"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_kqg6k"]
 [ext_resource type="TileSet" uid="uid://cr1eex3ctrdva" path="res://scenes/important/doom_tile_set.tres" id="1_vo55o"]
@@ -21,6 +21,10 @@
 [ext_resource type="Texture2D" uid="uid://c8rj2y640ig1t" path="res://textures/ZombV2.png" id="18_ihxmk"]
 [ext_resource type="Script" path="res://dzieckowoz.gd" id="20_pl77l"]
 [ext_resource type="PackedScene" uid="uid://dp0pgckmc7ndt" path="res://scenes/RUM.tscn" id="21_a3y8m"]
+[ext_resource type="Script" path="res://scenes/important/tutorial_controller.gd" id="22_8wcvp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0quf"]
+size = Vector2(72, 316)
 
 [node name="tutorial" type="Node2D"]
 script = ExtResource("1_kqg6k")
@@ -162,21 +166,35 @@ text = "rright_mouse_button_ to_dash"
 
 [node name="dash2" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 2040.0
-offset_top = -83.0
-offset_right = 2921.0
-offset_bottom = 35.0
+offset_left = 3172.0
+offset_top = -93.0
+offset_right = 4053.0
+offset_bottom = 25.0
 theme_override_font_sizes/font_size = 32
 text = "Ciggaretes and alcohol restore your sanity"
 
 [node name="candy" parent="." instance=ExtResource("21_a3y8m")]
-position = Vector2(2466, 36)
+position = Vector2(3377, 65)
 
 [node name="candy2" parent="." instance=ExtResource("21_a3y8m")]
-position = Vector2(2389, 99)
+position = Vector2(3300, 128)
 
 [node name="candy3" parent="." instance=ExtResource("21_a3y8m")]
-position = Vector2(2549, 154)
+position = Vector2(3460, 183)
 
 [node name="candy4" parent="." instance=ExtResource("21_a3y8m")]
-position = Vector2(2437, 150)
+position = Vector2(3348, 179)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(2309, -30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(26, 127)
+shape = SubResource("RectangleShape2D_v0quf")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="tutorial_controller" type="Node2D" parent="CanvasLayer2"]
+script = ExtResource("22_8wcvp")
+
+[connection signal="body_entered" from="Area2D" to="CanvasLayer2/tutorial_controller" method="_on_area_2d_body_entered"]
