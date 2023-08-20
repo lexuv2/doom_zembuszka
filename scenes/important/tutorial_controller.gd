@@ -61,7 +61,7 @@ func _on_children_area_body_entered(body):
 
 
 func _on_area_2d_2_body_entered(body):
-	if body is character and dialog_ind==3:
+	if body is character:
 		dialog_ind+=1
 		$"../../character".can_change_dim=true
 		var box = dialog_box.instantiate()
