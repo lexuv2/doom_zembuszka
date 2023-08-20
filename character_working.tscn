@@ -208,7 +208,6 @@ script = ExtResource("3_x3j1a")
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
 
 [node name="DamageIndicator" type="Sprite2D" parent="Camera2D/CanvasLayer"]
-self_modulate = Color(1, 1, 1, 0)
 position = Vector2(960, 540)
 texture = ExtResource("6_p0xh8")
 
@@ -238,7 +237,7 @@ lifetime = 0.3
 one_shot = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-21, 1231)
+position = Vector2(-1, 1100)
 scale = Vector2(2, 2)
 texture = ExtResource("9_uk10d")
 hframes = 12

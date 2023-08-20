@@ -34,7 +34,7 @@ func _process(delta):
 		add_child(box)
 		dialog_ind+=1
 		
-	if get_tree().root.get_child(0).player_tooths>=3 and dialog_ind==4:
+	if get_tree().root.get_child(0).player_tooths>=10 and dialog_ind==4:
 		var box = dialog_box.instantiate()
 		box.text=dialogs[dialog_ind]
 		box.texture=load(textures[dialog_ind])
@@ -56,4 +56,9 @@ func _on_timer_timeout():
 	$"../../character/NavigationAgent2D".target_position=$"../../Marker2D".position
 	move_fairy=true
 	$"../Timer_outro".start()
+	pass # Replace with function body.
+
+
+func _on_timer_outro_timeout():
+	get_tree().change_scene("res://scenes/important/scene2.tscn")
 	pass # Replace with function body.

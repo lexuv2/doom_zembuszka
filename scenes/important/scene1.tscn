@@ -185,4 +185,4 @@ wait_time = 5.0
 position = Vector2(3133, 613)
 
 [connection signal="timeout" from="CanvasLayer2/cutscene_controller_1/Timer" to="CanvasLayer2/cutscene_controller_1" method="_on_timer_timeout"]
-[connection signal="timeout" from="CanvasLayer2/Timer_outro" to="." method="_on_timer_outro_timeout"]
+[connection signal="timeout" from="CanvasLayer2/Timer_outro" to="CanvasLayer2/cutscene_controller_1" method="_on_timer_outro_timeout"]

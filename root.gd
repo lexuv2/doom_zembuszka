@@ -19,7 +19,8 @@ func change_diemnsion(dim: bool):
 	#0-fae
 	dimension=dim
 	if dim==true:
-		
+		if $Control!=null:
+			$Control.theme=load("res://doom_theme.tres")
 		$dzieckowoz.disable_children()
 		$demoniarnia.enable_children()
 		$demoniarnia.visible=true
@@ -27,6 +28,8 @@ func change_diemnsion(dim: bool):
 		$TileMap_fae.visible=false
 		$TileMap_doom.visible=true
 	else:
+		if $Control!=null:
+			$Control.theme=load("res://fairy_theme.tres")
 		$dzieckowoz.enable_children()
 		$demoniarnia.disable_children()
 		$demoniarnia.visible=false
@@ -55,29 +58,29 @@ func _physics_process(delta):
 	
 	$CanvasLayer/GridContainer/tooth_icon/Label.text = str($character.score)
 	if $character.psycha >= 5:
-		$CanvasLayer/GridContainer/sanity/TextureRect.texture=p5
+		$CanvasLayer/GridContainer/sanity/TextureRect5.texture=p5
 	else:
-		$CanvasLayer/GridContainer/health/TextureRect5.texture=Texture2D
+		$CanvasLayer/GridContainer/sanity/TextureRect5.texture=Texture2D
 	
 	if $character.psycha >= 4:
-		$CanvasLayer/GridContainer/sanity/TextureRect.texture=p4
+		$CanvasLayer/GridContainer/sanity/TextureRect4.texture=p4
 	else:
-		$CanvasLayer/GridContainer/health/TextureRect5.texture=Texture2D
+		$CanvasLayer/GridContainer/sanity/TextureRect4.texture=Texture2D
 		
 	if $character.psycha >= 3:
-		$CanvasLayer/GridContainer/sanity/TextureRect.texture=p3
+		$CanvasLayer/GridContainer/sanity/TextureRect3.texture=p3
 	else:
-		$CanvasLayer/GridContainer/health/TextureRect5.texture=Texture2D
+		$CanvasLayer/GridContainer/sanity/TextureRect3.texture=Texture2D
 		
 	if $character.psycha >= 2:
-		$CanvasLayer/GridContainer/sanity/TextureRect.texture=p2
+		$CanvasLayer/GridContainer/sanity/TextureRect2.texture=p2
 	else:
-		$CanvasLayer/GridContainer/health/TextureRect5.texture=Texture2D
+		$CanvasLayer/GridContainer/sanity/TextureRect2.texture=Texture2D
 		
 	if $character.psycha >= 1:
 		$CanvasLayer/GridContainer/sanity/TextureRect.texture=p1
 	else:
-		$CanvasLayer/GridContainer/health/TextureRect5.texture=Texture2D
+		$CanvasLayer/GridContainer/sanity/TextureRect.texture=Texture2D
 		
 		
 		
@@ -131,5 +134,3 @@ func _input(event: InputEvent) -> void:
 			get_tree().paused = true
 
 
-func _on_timer_outro_timeout():
-	pass # Replace with function body.

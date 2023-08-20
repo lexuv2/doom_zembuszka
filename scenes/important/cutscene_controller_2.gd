@@ -81,7 +81,7 @@ func _process(delta):
 		$"../../AnimationPlayer".play("throw_coin")
 	if (dialog_ind==13) and get_child_count()==0:
 		$"../../AnimationPlayer".play("fadeout")
-	if (get_child_count()==0) and auto_next[dialog_ind-1] and dialogs.size()>dialog_ind:			
+	if (get_child_count()==0) and auto_next[dialog_ind-1] and dialogs.size()>dialog_ind:
 		var box = dialog_box.instantiate()
 		box.text=dialogs[dialog_ind]
 		box.texture=load(textures[dialog_ind])
@@ -91,6 +91,7 @@ func _process(delta):
 
 	
 	pass
-
+func tut():
+	get_tree().change_scene("res://scenes/important/tutorial.tscn")
 func _physics_process(delta):
 	pass

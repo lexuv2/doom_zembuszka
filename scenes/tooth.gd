@@ -9,7 +9,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$ZombV2.visible=!get_node("/root/root").dimension	
+	$ZombV2.visible=!get_tree().root.get_child(0).dimension	
 	collision_layer=$ZombV2.visible
 	collision_mask=$ZombV2.visible
 	
@@ -33,6 +33,6 @@ func _on_area_2d_body_entered(body):
 		var bd = body as character
 		bd.score+=1
 		$GPUParticles2D.emitting=true
-		$GPUParticles2D.reparent(get_node("/root/root/"))
+		$GPUParticles2D.reparent(get_tree().root.get_child(0))
 		queue_free()
 	pass # Replace with function body.

@@ -3,7 +3,7 @@ class_name character
 @export var enable_camera:bool = true
 @export var SPEED = 300.0
 var hp = 5
-var psycha = 5
+var psycha = 3
 var score = 0
 @export var lock_controlls:bool =0
 @export var dimension:bool=1
@@ -11,7 +11,7 @@ var score = 0
 @export var sprite_doom: Texture2D
 @export var sprite_fairy: Texture2D
 var weapons  = ["res://scenes/shotgun.tscn","res://scenes/kar96k.tscn","res://cannon.tscn","res://bofors.tscn"]
-var unlocks = [1,1,1,1,1]
+var unlocks = [1,0,0,0,0]
 @export var damage_timeout=120
 var damage_timer=0;
 var dash_timer = 0;
@@ -31,6 +31,10 @@ func set_booba_offset(inp:int ):
 	booba_v_offset=inp
 	get_tree().root.get_child(0).booba(inp)
 var papapj2137=false
+func sainty_damage():
+	$Camera2D/CanvasLayer/DamageIndicator.modulate.a=1
+	psycha-=1
+
 func change_dimension(dim: bool):
 	if papapj2137:
 		$AnimationPlayer2.play("coin")
@@ -98,6 +102,8 @@ func _physics_process(delta):
 	$fairy/FaerieBoobaLeft.position.x = position.direction_to(right_marker).x
 	$fairy/FaerieBoobaLeft.position.y = position.direction_to(right_marker).y
 	
+	
+
 	
 	
 	if Input.is_action_just_pressed("change_dimmension") and can_change_dim:
