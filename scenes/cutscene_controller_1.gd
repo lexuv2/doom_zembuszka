@@ -2,7 +2,7 @@ extends Node2D
 
 var dialog_box
 
-var dialogs = ["Fucking hangover....","I hate working with children....","I feel like my head is going to explode","I still need to collect 10 more teeth","Fucking finaly. Time to go home"]
+var dialogs = ["Fucking hangover....","I hate working with children...","I feel like my head is going to explode!","I still need to collect 10 more teeth.","Fucking finally. Time to go home."]
 var auto_next =[1,1,1,0,1,1,1,1,1]
 # Called when the node enters the scene tree for the first time.
 var dialog_ind =0

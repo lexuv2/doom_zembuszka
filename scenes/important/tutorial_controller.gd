@@ -15,7 +15,7 @@ func _process(delta):
 			dialog_ind+=1
 			$"../../character".can_change_dim=false
 			var box = dialog_box.instantiate()
-			box.text="Shiiiit, i got used to hell already\n"
+			box.text="Shiiiit, I got used to hell already!\n"
 			box.texture=load("res://scenes/important/portraits/faerie_fae_idle_normalEyes_spritesheet-sheet-sheet.png")
 			add_child(box)
 			if $"../../StaticBody2D"!=null:
@@ -25,7 +25,7 @@ func _process(delta):
 			dialog_ind+=1
 			$"../../character".can_change_dim=false
 			var box = dialog_box.instantiate()
-			box.text="Never again..\n"
+			box.text="Never again...\n"
 			box.texture=load("res://scenes/important/portraits/faerie_fae_idle_normalEyes_spritesheet-sheet-sheet.png")
 			add_child(box)
 
@@ -38,7 +38,7 @@ func _on_area_2d_body_entered(body):
 		dialog_ind+=1
 		$"../../character".can_change_dim=true
 		var box = dialog_box.instantiate()
-		box.text="Alright, lets see how this coin works"
+		box.text="Alright, let's see how this coin works."
 		box.texture=load("res://scenes/important/portraits/faerie_fae_idle_normalEyes_spritesheet-sheet-sheet.png")
 		add_child(box)
 		$"../../Control/coin".visible=true
@@ -52,7 +52,7 @@ func _on_children_area_body_entered(body):
 		dialog_ind+=1
 		$"../../character".can_change_dim=true
 		var box = dialog_box.instantiate()
-		box.text="Aaaaagh, my head I cant stand those children"
+		box.text="Aaaaagh, my head, I can't stand these children."
 		$"../../character".sainty_damage()
 		box.texture=load("res://scenes/important/portraits/faerie_fae_idle_normalEyes_spritesheet-sheet-sheet.png")
 		add_child(box)
@@ -65,7 +65,7 @@ func _on_area_2d_2_body_entered(body):
 		dialog_ind+=1
 		$"../../character".can_change_dim=true
 		var box = dialog_box.instantiate()
-		box.text="I think im ready. Lets go"
+		box.text="I think I'm ready. Let's go!"
 		box.texture=load("res://scenes/important/portraits/faerie_fae_idle_normalEyes_spritesheet-sheet-sheet.png")
 		add_child(box)
 		$"../../Timer".start()
