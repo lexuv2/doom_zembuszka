@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://t0wf5mei3iro"]
+[gd_scene load_steps=20 format=3 uid="uid://t0wf5mei3iro"]
 
 [ext_resource type="Script" path="res://character.gd" id="1_kd2mr"]
 [ext_resource type="Texture2D" uid="uid://b5qfi5xkbv8pd" path="res://faerie_idle_spritesheet_plus2pixel.png" id="2_yyrvc"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dtmv1q2sk6wc0" path="res://faerie_booba_right.png" id="6_htnr4"]
 [ext_resource type="Texture2D" uid="uid://4tnjor7gx1l2" path="res://textures/damage_indicator.tres" id="6_p0xh8"]
 [ext_resource type="PackedScene" uid="uid://iyvhc2g4r5y1" path="res://cannon.tscn" id="7_f6fbs"]
+[ext_resource type="Texture2D" uid="uid://vjv0ot62573q" path="res://scenes/important/coin.png" id="9_uk10d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6ekui"]
 radius = 17.0
@@ -98,6 +99,85 @@ scale_min = 10.0
 scale_max = 20.0
 color = Color(1, 1, 1, 0.384314)
 
+[sub_resource type="Animation" id="Animation_uohco"]
+resource_name = "coin"
+length = 1.45
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.159754, -1.5, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.8, 1.4)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1064, -0.25, 0, 0.25, 0, 0, -0.659754, -4.5, 0.640245, -1.5, 1051, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.8, 1.4)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0, 6, -0.25, 0, 0.25, 0, 7, -0.25, 0, 0.25, 0, 8, -0.25, 0, 0.25, 0, 9, -0.25, 0, 0.25, 0, 10, -0.25, 0, 0.25, 0, 11, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1)
+}
+
+[sub_resource type="Animation" id="Animation_a8yu8"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(800, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8tup4"]
+_data = {
+"RESET": SubResource("Animation_a8yu8"),
+"coin": SubResource("Animation_uohco")
+}
+
 [node name="character" type="CharacterBody2D"]
 motion_mode = 1
 floor_stop_on_slope = false
@@ -156,3 +236,15 @@ amount = 30
 process_material = SubResource("ParticleProcessMaterial_5rowl")
 lifetime = 0.3
 one_shot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 800)
+scale = Vector2(2, 2)
+texture = ExtResource("9_uk10d")
+hframes = 12
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+speed_scale = 2.0
+libraries = {
+"": SubResource("AnimationLibrary_8tup4")
+}

@@ -17,7 +17,8 @@ func set_weapon(weapon):
 	add_child(new_gun)
 
 func hide_weapon():
-	get_child(0).queue_free()
+	if get_child(0)!=null:
+		get_child(0).queue_free()
 
 func show_weapon():
 	get_child(0).queue_free()

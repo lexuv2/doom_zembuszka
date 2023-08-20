@@ -40,6 +40,40 @@ visible = false
 tile_set = ExtResource("2_y1gf4")
 format = 2
 
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("11_1wutb")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -6.0
+offset_top = -189.0
+offset_right = 390.0
+offset_bottom = -71.0
+theme_override_font_sizes/font_size = 32
+text = "Press WASD to move"
+
+[node name="dash" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 948.0
+offset_top = -83.0
+offset_right = 1590.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 32
+text = "rright_mouse_button_ to_dash"
+
+[node name="dash2" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 3172.0
+offset_top = -93.0
+offset_right = 4053.0
+offset_bottom = 25.0
+theme_override_font_sizes/font_size = 32
+text = "Ciggaretes and alcohol restore your sanity"
+
 [node name="character" parent="." instance=ExtResource("3_bvdnv")]
 sprite_doom = ExtResource("4_qyqj2")
 sprite_fairy = ExtResource("5_mx17t")
@@ -138,40 +172,6 @@ script = ExtResource("20_pl77l")
 
 [node name="demoniarnia" type="Node2D" parent="."]
 script = ExtResource("20_pl77l")
-
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme = ExtResource("11_1wutb")
-
-[node name="Label" type="Label" parent="Control"]
-layout_mode = 0
-offset_left = -6.0
-offset_top = -189.0
-offset_right = 390.0
-offset_bottom = -71.0
-theme_override_font_sizes/font_size = 32
-text = "Press WASD to move"
-
-[node name="dash" type="Label" parent="Control"]
-layout_mode = 0
-offset_left = 948.0
-offset_top = -83.0
-offset_right = 1590.0
-offset_bottom = 35.0
-theme_override_font_sizes/font_size = 32
-text = "rright_mouse_button_ to_dash"
-
-[node name="dash2" type="Label" parent="Control"]
-layout_mode = 0
-offset_left = 3172.0
-offset_top = -93.0
-offset_right = 4053.0
-offset_bottom = 25.0
-theme_override_font_sizes/font_size = 32
-text = "Ciggaretes and alcohol restore your sanity"
 
 [node name="candy" parent="." instance=ExtResource("21_a3y8m")]
 position = Vector2(3377, 65)

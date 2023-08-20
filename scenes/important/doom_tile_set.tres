@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=7 format=3 uid="uid://cr1eex3ctrdva"]
 
-[ext_resource type="Texture2D" uid="uid://dtr00e1xhnpna" path="res://tileset_hell.png" id="1_c08y0"]
+[ext_resource type="Texture2D" uid="uid://dsf178bauvw74" path="res://scenes/tileset_hell.png" id="1_ae7af"]
 [ext_resource type="Texture2D" uid="uid://2haos7prc4ck" path="res://textures/tileset_lava.png" id="2_y1i70"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mk2g6"]
@@ -12,7 +12,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -32, 32, -32, 32, 
 polygon = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rm6rf"]
-texture = ExtResource("1_c08y0")
+texture = ExtResource("1_ae7af")
 texture_region_size = Vector2i(64, 64)
 4:0/0 = 0
 4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -268,6 +268,15 @@ texture_region_size = Vector2i(64, 64)
 1:2/0 = 0
 1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:2/0/physics_layer_0/angular_velocity = 0.0
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+3:1/0 = 0
+3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:1/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yo0k2"]
 texture = ExtResource("2_y1i70")

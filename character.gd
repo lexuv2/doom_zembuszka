@@ -31,8 +31,9 @@ func set_booba_offset(inp:int ):
 	get_tree().root.get_child(0).booba(inp)
 	
 func change_dimension(dim: bool):
+	$AnimationPlayer2.play("coin")
 	get_tree().root.get_child(0).change_diemnsion(dim)
-
+	
 	if dim:
 		$fairy.texture=sprite_doom
 		$fairy/FaerieBoobaLeft.texture=sprite_left_boob_doom
