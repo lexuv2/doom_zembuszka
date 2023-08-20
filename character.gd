@@ -1,6 +1,6 @@
 extends CharacterBody2D
 class_name character
-
+@export var enable_camera:bool = true
 @export var SPEED = 300.0
 var hp = 5
 var psycha = 5
@@ -133,6 +133,7 @@ func _physics_process(delta):
 	
 		
 func _ready():
+	$Camera2D.enabled=enable_camera
 	change_dimension(dimension)
 	$AnimationPlayer.play("RESET")
 

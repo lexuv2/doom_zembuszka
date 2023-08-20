@@ -128,6 +128,7 @@ script = ExtResource("3_x3j1a")
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
 
 [node name="DamageIndicator" type="Sprite2D" parent="Camera2D/CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0)
 position = Vector2(960, 540)
 texture = ExtResource("6_p0xh8")
 

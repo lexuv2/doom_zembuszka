@@ -1,12 +1,13 @@
 extends Control
 
 @export var text: String = "Fucking hangover...."
-
+var texture: Texture2D
 var text_timer=0
 var displayed_text_size=0
 @export var text_speed = 1
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$PanelContainer/HBoxContainer/TextureRect.texture=texture
 	$PanelContainer/HBoxContainer/Label.text=""
 	pass # Replace with function body.
 

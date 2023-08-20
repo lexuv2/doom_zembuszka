@@ -7,11 +7,17 @@ var auto_next =[1,1,1,0,1,1,1,1,1]
 # Called when the node enters the scene tree for the first time.
 var dialog_ind =0
 var move_fairy=0
-
+var textures = ["res://scenes/important/portraits/faerie_fae_idle_normalEyes_spritesheet-sheet-sheet.png",
+"res://scenes/important/portraits/faerie_fae_idle_normalEyes_spritesheet-sheet-sheet.png",
+"res://scenes/important/portraits/faerie_fae_idle_normalEyes_spritesheet-sheet-sheet.png",
+"res://scenes/important/portraits/faerie_fae_idle_normalEyes_spritesheet-sheet-sheet.png",
+"res://scenes/important/portraits/faerie_fae_idle_normalEyes_spritesheet-sheet-sheet.png",
+"res://scenes/important/portraits/faerie_fae_idle_normalEyes_spritesheet-sheet-sheet.png",]
 func _ready():
 	dialog_box=preload("res://scenes/important/dialog_box.tscn")
 	var box = dialog_box.instantiate()
 	box.text=dialogs[0]
+	box.texture=load(textures[dialog_ind])
 	add_child(box)
 	dialog_ind+=1
 	pass # Replace with function body.
@@ -24,12 +30,14 @@ func _process(delta):
 			$"../Label".visible=true
 		var box = dialog_box.instantiate()
 		box.text=dialogs[dialog_ind]
+		box.texture=load(textures[dialog_ind])
 		add_child(box)
 		dialog_ind+=1
 		
 	if get_tree().root.get_child(0).player_tooths>=3 and dialog_ind==4:
 		var box = dialog_box.instantiate()
 		box.text=dialogs[dialog_ind]
+		box.texture=load(textures[dialog_ind])
 		add_child(box)
 		dialog_ind+=1
 		$"../../character".lock_controlls=true

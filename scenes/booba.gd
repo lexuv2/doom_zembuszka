@@ -10,7 +10,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	var car = get_node("/root/root/character")
+	var car = get_tree().root.get_child(0)
 
 	apply_central_force(position.direction_to(car.position+off+Vector2(0,vertical_off))*position.distance_squared_to(car.position+off+Vector2(0,vertical_off))*randf_range(3,6))
 	pass
