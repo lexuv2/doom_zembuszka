@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://i1hq387dcva0"]
+[gd_scene load_steps=40 format=3 uid="uid://i1hq387dcva0"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_jofuf"]
 [ext_resource type="TileSet" uid="uid://byxedspvuke82" path="res://scenes/important/fae_tile_set.tres" id="2_0iip8"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://ioysk7mfthah" path="res://scenes/important/not_so_importantt/booba-yellow.png" id="31_o4sdy"]
 [ext_resource type="Texture2D" uid="uid://q8yj8eutmp6e" path="res://scenes/lusKASTRZELBA.png" id="32_8rsxe"]
 [ext_resource type="Script" path="res://scenes/important/cutscene_controller_2.gd" id="32_lhap3"]
+[ext_resource type="Texture2D" uid="uid://vjv0ot62573q" path="res://scenes/important/coin.png" id="33_g2clv"]
 
 [sub_resource type="Animation" id="Animation_r8xvn"]
 resource_name = "gets_shotgun"
@@ -287,6 +288,52 @@ tracks/8/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Coin:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Coin:position:x")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(993, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Coin:position:y")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(478, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("CanvasModulate:color")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_i2qlm"]
 resource_name = "not_so_fast"
@@ -330,11 +377,81 @@ tracks/2/keys = {
 "values": [Vector2(1094, 603), Vector2(1260, 603)]
 }
 
+[sub_resource type="Animation" id="Animation_snxxl"]
+resource_name = "throw_coin"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Coin:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Coin:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(993, -0.25, 0, 0.6, 245.5, 1241, -0.6, -240.5, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Coin:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(478, -0.25, 0, 0.1, -218.5, 582, 0, 1.5, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer2/cutscene_controller_2")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"perfet"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_teek3"]
+resource_name = "fadeout"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8rhjx"]
 _data = {
 "RESET": SubResource("Animation_krsfd"),
+"fadeout": SubResource("Animation_teek3"),
 "gets_shotgun": SubResource("Animation_r8xvn"),
-"not_so_fast": SubResource("Animation_i2qlm")
+"not_so_fast": SubResource("Animation_i2qlm"),
+"throw_coin": SubResource("Animation_snxxl")
 }
 
 [node name="scene2" type="Node2D"]
@@ -516,3 +633,12 @@ stream = ExtResource("31_epkb5")
 visible = false
 position = Vector2(1092, 597)
 texture = ExtResource("32_8rsxe")
+
+[node name="Coin" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(993, 478)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("33_g2clv")
+hframes = 12
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]

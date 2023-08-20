@@ -12,11 +12,11 @@ var  timer =0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	target=get_node("/root/root/character")
+	target=get_tree().root.get_child(0).get_node("character")
 	retarget()
 
 func retarget() -> void:
-	if get_node("/root/root").dimension:
+	if get_tree().root.get_child(0).dimension:
 		agent.target_position = target.global_position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -51,7 +51,7 @@ func _physics_process(delta):
 				add_child(can)
 				var rng = 100
 				can.position+=Vector2(randi_range(-rng,rng),randi_range(-rng,rng))
-				can.reparent(get_node("/root/root"))
+				can.reparent(get_tree().root.get_child(0))
 		
 		
 				for x in 0:
@@ -59,15 +59,15 @@ func _physics_process(delta):
 					add_child(tot)
 					rng = 50
 					tot.position+=Vector2(randi_range(-rng,rng),randi_range(-rng,rng))
-					tot.reparent(get_node("/root/root"))
+					tot.reparent(get_tree().root.get_child(0))
 				
 				
 				
 				for x in range(0,50):
 					var blood_range = 120
 					$bullet_blood.emit_particle(Transform2D(),Vector2(randf_range(-blood_range,blood_range),randf_range(-blood_range,blood_range)),Color(),Color(),4)
-				$bullet_blood.reparent(get_node("/root/root"))
-				$blood.reparent(get_node("/root/root"))
+				$bullet_blood.reparent(get_tree().root.get_child(0))
+				$blood.reparent(get_tree().root.get_child(0))
 				queue_free()
 				return
 
