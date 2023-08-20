@@ -146,3 +146,14 @@ func _ready():
 	change_dimension(dimension)
 	$AnimationPlayer.play("RESET")
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed('pause') and !get_tree().paused:
+		print('esc')
+		
+		var is_pauesd = get_tree().paused
+		get_tree().paused = !is_pauesd
+		
+		$Camera2D/CanvasLayer/pause_men.show()
+	
+	
+
