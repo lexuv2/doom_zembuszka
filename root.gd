@@ -10,6 +10,8 @@ var player_tooths=0
 var heart=preload("res://textures/sercegit.png")
 @export var cutscene_mode:bool=false
 @export var lock_dim:bool = false
+var teeth_cap=10
+
 
 
 func change_diemnsion(dim: bool):

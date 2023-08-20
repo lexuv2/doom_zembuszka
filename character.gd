@@ -137,7 +137,7 @@ func _physics_process(delta):
 		var collision = get_slide_collision(i)
 		if collision.get_collider() is enemy:
 			if (damage_timer>damage_timeout):
-				hp-=1;
+				hp=clamp(hp-1,0,5)
 				$Camera2D/CanvasLayer/DamageIndicator.modulate.a=1
 				damage_timer=0
 	

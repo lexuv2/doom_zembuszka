@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhmicqok8siux"]
+
+[ext_resource type="Script" path="res://scenes/important/collect_teeth.gd" id="1_lygrb"]
+[ext_resource type="Theme" uid="uid://c3doc5dml7lkv" path="res://doom_theme.tres" id="2_ftfaw"]
+
+[node name="collect_teeth" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lygrb")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("2_ftfaw")
+theme_override_font_sizes/font_size = 32
+text = "Collect 10 more teeth to advance to next area"

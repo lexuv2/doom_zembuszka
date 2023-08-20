@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://xbsmbgeh8n0a"]
+
+[ext_resource type="Texture2D" uid="uid://bxyn4aepw6a16" path="res://scenes/important/tileset-hell-sheet.png" id="1_gttyu"]
+[ext_resource type="Script" path="res://scenes/important/door.gd" id="1_ltdcg"]
+
+[node name="door" type="Node2D"]
+script = ExtResource("1_ltdcg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(32, 32)
+texture = ExtResource("1_gttyu")
+hframes = 4
+
+[node name="Area2D" type="Area2D" parent="."]

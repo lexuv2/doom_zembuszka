@@ -98,10 +98,10 @@ text = "Press space to throw a coin"
 [node name="children_damage" type="Label" parent="Control"]
 visible = false
 layout_mode = 0
-offset_left = 3180.0
-offset_top = -462.0
-offset_right = 4061.0
-offset_bottom = -108.0
+offset_left = 3158.0
+offset_top = -38.0
+offset_right = 4039.0
+offset_bottom = 316.0
 theme_override_font_sizes/font_size = 32
 text = "Being near children damages yor sanity
 collect as much teeth as you can and

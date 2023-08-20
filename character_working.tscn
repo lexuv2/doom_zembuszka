@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://t0wf5mei3iro"]
+[gd_scene load_steps=19 format=3 uid="uid://t0wf5mei3iro"]
 
 [ext_resource type="Script" path="res://character.gd" id="1_kd2mr"]
 [ext_resource type="Texture2D" uid="uid://b5qfi5xkbv8pd" path="res://faerie_idle_spritesheet_plus2pixel.png" id="2_yyrvc"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" path="res://gun_handler.gd" id="5_cp6vo"]
 [ext_resource type="Texture2D" uid="uid://dtmv1q2sk6wc0" path="res://faerie_booba_right.png" id="6_htnr4"]
 [ext_resource type="Texture2D" uid="uid://4tnjor7gx1l2" path="res://textures/damage_indicator.tres" id="6_p0xh8"]
-[ext_resource type="PackedScene" uid="uid://iyvhc2g4r5y1" path="res://cannon.tscn" id="7_f6fbs"]
 [ext_resource type="Texture2D" uid="uid://vjv0ot62573q" path="res://scenes/important/coin.png" id="9_uk10d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6ekui"]
@@ -244,9 +243,6 @@ texture = SubResource("GradientTexture2D_shest")
 
 [node name="gun_handler" type="Node2D" parent="."]
 script = ExtResource("5_cp6vo")
-
-[node name="shotgun" parent="gun_handler" instance=ExtResource("7_f6fbs")]
-casing = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

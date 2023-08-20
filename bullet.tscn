@@ -38,7 +38,7 @@ inertia = 10.0
 physics_material_override = SubResource("PhysicsMaterial_o61m3")
 continuous_cd = 1
 script = ExtResource("1_wymef")
-speed = 3000
+speed = 1500
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3dwqx")
