@@ -3,6 +3,7 @@ class_name spawner
 @export var le_creatura: PackedScene
 @export var target_node: String
 @export var turned_on: bool = false
+@export var is_dzieciak: bool =false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,6 +18,11 @@ func _on_timer_timeout() -> void:
 	
 	bahor.position = spawn_loc
 	
-	
+	if is_dzieciak and get_tree().root.get_child(0).dimension:
+		bahor.collision_layer=0
+		bahor.collision_layer=0
+	if !is_dzieciak and !get_tree().root.get_child(0).dimension:
+		bahor.collision_layer=0
+		bahor.collision_layer=0
 	get_tree().root.get_child(0).get_node(target_node).add_child(bahor)
 	

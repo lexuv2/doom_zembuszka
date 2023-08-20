@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fqk2i"]
 size = Vector2(88, 85)
 
-[node name="door" type="Node2D"]
+[node name="door" type="Area2D"]
 script = ExtResource("1_ltdcg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -20,3 +20,5 @@ frame = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(34, 32.5)
 shape = SubResource("RectangleShape2D_fqk2i")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

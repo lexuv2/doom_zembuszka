@@ -1,6 +1,6 @@
 class_name door
 
-extends Node2D
+extends Area2D
 @export var tooth_cap = 100
 @export var min_tooth_cap=0
 @export var enabled=false
@@ -21,8 +21,17 @@ func _process(delta):
 	if (get_tree().root.get_child(0).player_tooths >=tooth_cap ) and not opened:
 		get_tree().root.get_child(0).get_node("demoniarnia").kill()
 		$Sprite2D.frame=0
-		$StaticBody2D.queue_free()
+		$StaticBody2D.collision_layer=0
+		$StaticBody2D.collision_mask=0
 		opened=true
 		enabled=false
 		pass
 	pass
+
+
+func _on_body_entered(body):
+	if body is character:
+		$Sprite2D.frame=4
+		$StaticBody2D.collision_layer=1
+		$StaticBody2D.collision_mask=1
+	pass # Replace with function body.
