@@ -11,7 +11,8 @@ func _ready():
 
 func set_weapon(weapon):
 	active_weapon=weapon
-	get_child(0).queue_free()
+	if get_child(0)!=null:
+		get_child(0).queue_free()
 	
 	var new_gun = load(weapon).instantiate()
 	add_child(new_gun)

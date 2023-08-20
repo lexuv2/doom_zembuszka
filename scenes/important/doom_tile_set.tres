@@ -1,7 +1,8 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://cr1eex3ctrdva"]
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://cr1eex3ctrdva"]
 
 [ext_resource type="Texture2D" uid="uid://dsf178bauvw74" path="res://scenes/tileset_hell.png" id="1_ae7af"]
 [ext_resource type="Texture2D" uid="uid://2haos7prc4ck" path="res://textures/tileset_lava.png" id="2_y1i70"]
+[ext_resource type="Texture2D" uid="uid://r0pb1afu02xv" path="res://scenes/important/hekktile-sheet-sheet-sheet-sheet.png" id="3_swm8g"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mk2g6"]
 vertices = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
@@ -291,6 +292,22 @@ texture_region_size = Vector2i(64, 64)
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mm6fv"]
+texture = ExtResource("3_swm8g")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+
 [resource]
 tile_size = Vector2i(64, 64)
 occlusion_layer_0/light_mask = 1
@@ -302,3 +319,4 @@ terrain_set_0/terrain_0/color = Color(0.682353, 0.121569, 0.305882, 1)
 navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_rm6rf")
 sources/1 = SubResource("TileSetAtlasSource_yo0k2")
+sources/2 = SubResource("TileSetAtlasSource_mm6fv")

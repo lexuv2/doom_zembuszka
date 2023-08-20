@@ -21,6 +21,7 @@ var dash_timer = 0;
 
 @export var sprite_right_boob_doom: Texture2D
 @export var sprite_right_boob_fairy: Texture2D
+var can_change_dim = true
 
 
 var flashbang=false
@@ -29,9 +30,11 @@ var sprite_rotation_target=0.0
 func set_booba_offset(inp:int ):
 	booba_v_offset=inp
 	get_tree().root.get_child(0).booba(inp)
-	
+var papapj2137=false
 func change_dimension(dim: bool):
-	$AnimationPlayer2.play("coin")
+	if papapj2137:
+		$AnimationPlayer2.play("coin")
+	papapj2137=true
 	get_tree().root.get_child(0).change_diemnsion(dim)
 	
 	if dim:
@@ -97,7 +100,7 @@ func _physics_process(delta):
 	
 	
 	
-	if Input.is_action_just_pressed("change_dimmension"):
+	if Input.is_action_just_pressed("change_dimmension") and can_change_dim:
 		if get_tree().root.get_child(0).lock_dim:
 			return
 		flashbang=true
