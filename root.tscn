@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://b2gns5uq3xa8n"]
+[gd_scene load_steps=36 format=3 uid="uid://b2gns5uq3xa8n"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_hjnfc"]
 [ext_resource type="PackedScene" uid="uid://bw08oun4htikl" path="res://scenes/booba.tscn" id="1_jb7nx"]
@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://cesqhn60gxkvm" path="res://textures/psycha/Psycha3.png" id="9_7hghp"]
 [ext_resource type="Texture2D" uid="uid://cvf3x00softwu" path="res://textures/psycha/Psycha4.png" id="10_o81a7"]
 [ext_resource type="Texture2D" uid="uid://dshive047741y" path="res://textures/psycha/Psycha5.png" id="11_hniqk"]
-[ext_resource type="PackedScene" uid="uid://50awd4naw3q4" path="res://scenes/la_creatura_spawner.tscn" id="13_5renl"]
+[ext_resource type="PackedScene" path="res://scenes/la_creatura_spawner.tscn" id="13_5renl"]
 [ext_resource type="Texture2D" uid="uid://cmsrwr8a81u3r" path="res://textures/sercegit.png" id="18_n0542"]
 [ext_resource type="PackedScene" uid="uid://bctat1u1j0s4r" path="res://demon_base.tscn" id="20_nhg8s"]
 [ext_resource type="PackedScene" uid="uid://cde77dnk8n4kx" path="res://demon_bastard.tscn" id="21_endo8"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" path="res://scenes/important/collect_teeth.tscn" id="24_vjpb8"]
 [ext_resource type="PackedScene" uid="uid://cws13kwoe7kwq" path="res://scenes/child.tscn" id="26_qjxgv"]
 [ext_resource type="Script" path="res://dzieckowoz.gd" id="27_cuboh"]
+[ext_resource type="PackedScene" uid="uid://xbsmbgeh8n0a" path="res://scenes/important/door.tscn" id="30_bs2sb"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mk2g6"]
 vertices = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
@@ -622,3 +623,11 @@ position = Vector2(-360, -101)
 
 [node name="demon4" parent="demoniarnia" instance=ExtResource("22_su5k4")]
 position = Vector2(24, 379)
+
+[node name="door" parent="." instance=ExtResource("30_bs2sb")]
+position = Vector2(1344, -64)
+tooth_cap = 10
+
+[node name="door2" parent="." instance=ExtResource("30_bs2sb")]
+position = Vector2(1344, 0)
+tooth_cap = 10

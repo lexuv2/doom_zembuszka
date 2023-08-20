@@ -17,6 +17,9 @@ func disable_children():
 		rig.collision_mask=0
 		rig.collision_layer=0
 	pass
+func kill():
+	for x in get_children():
+		x.queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

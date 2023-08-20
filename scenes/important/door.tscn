@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://xbsmbgeh8n0a"]
+[gd_scene load_steps=4 format=3 uid="uid://xbsmbgeh8n0a"]
 
 [ext_resource type="Texture2D" uid="uid://bxyn4aepw6a16" path="res://scenes/important/tileset-hell-sheet.png" id="1_gttyu"]
 [ext_resource type="Script" path="res://scenes/important/door.gd" id="1_ltdcg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqk2i"]
+size = Vector2(88, 85)
 
 [node name="door" type="Node2D"]
 script = ExtResource("1_ltdcg")
@@ -10,5 +13,10 @@ script = ExtResource("1_ltdcg")
 position = Vector2(32, 32)
 texture = ExtResource("1_gttyu")
 hframes = 4
+frame = 3
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(34, 32.5)
+shape = SubResource("RectangleShape2D_fqk2i")

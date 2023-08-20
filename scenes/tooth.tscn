@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://c8rj2y640ig1t" path="res://textures/ZombV2.png" id="2_kcduw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aa8mi"]
-radius = 9.0
-height = 26.0
+radius = 18.0
+height = 36.0
 
 [sub_resource type="Curve" id="Curve_4ytgg"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.746421, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
