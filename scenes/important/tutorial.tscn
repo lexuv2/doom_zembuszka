@@ -114,6 +114,7 @@ sprite_left_boob_doom = ExtResource("6_g5plw")
 sprite_left_boob_fairy = ExtResource("7_5fwm4")
 sprite_right_boob_doom = ExtResource("8_x5r6s")
 sprite_right_boob_fairy = ExtResource("9_smj7j")
+cutscene = true
 
 [node name="booba_l" parent="." instance=ExtResource("10_rnrjr")]
 position = Vector2(-47, 3)

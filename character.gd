@@ -3,7 +3,7 @@ class_name character
 @export var enable_camera:bool = true
 @export var SPEED = 300.0
 var hp = 5
-var psycha = 3
+var psycha = 5
 var score = 0
 @export var lock_controlls:bool =0
 @export var dimension:bool=1
@@ -22,6 +22,7 @@ var dash_timer = 0;
 @export var sprite_right_boob_doom: Texture2D
 @export var sprite_right_boob_fairy: Texture2D
 var can_change_dim = true
+@export var cutscene: bool = false
 
 
 var flashbang=false
@@ -32,6 +33,8 @@ func set_booba_offset(inp:int ):
 	get_tree().root.get_child(0).booba(inp)
 var papapj2137=false
 func sainty_damage():
+	if cutscene:
+		return
 	$Camera2D/CanvasLayer/DamageIndicator.modulate.a=1
 	psycha-=1
 
@@ -55,7 +58,7 @@ func _physics_process(delta):
 	if (hp<=0):
 		get_tree().change_scene_to_file("res://gam_over.tscn")
 	if (psycha<=0):
-		get_tree().change_scene_to_file("res://gam_over.tscn")
+		change_dimension(1)
 	if lock_controlls:
 		return
 	

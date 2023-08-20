@@ -4,7 +4,7 @@ class_name enemy
 @export var target: Node2D
 @export var speed: float = 10000
 @onready var agent := $NavigationAgent2D as NavigationAgent2D
-@export var target_refresh_time:int = 30 
+@export var target_refresh_time:int = 60
 var tooth = preload("res://scenes/tooth.tscn")
 var glob_direction
 @export var score =5 
@@ -22,7 +22,7 @@ func retarget() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	timer+=1
-	if timer>target_refresh_time:
+	if timer>target_refresh_time+randi_range(0,10):
 		retarget()
 		timer=0
 	var direction = to_local(agent.get_next_path_position()).normalized()

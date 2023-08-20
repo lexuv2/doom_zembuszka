@@ -21,6 +21,7 @@ theme_override_font_sizes/font_size = 32
 text = "Collect 10 more teeth to advance to next area"
 
 [node name="Label2" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 24.0
 offset_right = 910.0

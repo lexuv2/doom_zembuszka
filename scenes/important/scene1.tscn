@@ -48,6 +48,7 @@ sprite_left_boob_doom = ExtResource("8_sqbis")
 sprite_left_boob_fairy = ExtResource("9_pn314")
 sprite_right_boob_doom = ExtResource("10_b1y4d")
 sprite_right_boob_fairy = ExtResource("11_tvvny")
+cutscene = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="character"]
 path_desired_distance = 128.0
