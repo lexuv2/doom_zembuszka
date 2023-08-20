@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://b2gns5uq3xa8n"]
+[gd_scene load_steps=34 format=3 uid="uid://b2gns5uq3xa8n"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_hjnfc"]
 [ext_resource type="PackedScene" uid="uid://bw08oun4htikl" path="res://scenes/booba.tscn" id="1_jb7nx"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://cesqhn60gxkvm" path="res://textures/psycha/Psycha3.png" id="9_7hghp"]
 [ext_resource type="Texture2D" uid="uid://cvf3x00softwu" path="res://textures/psycha/Psycha4.png" id="10_o81a7"]
 [ext_resource type="Texture2D" uid="uid://dshive047741y" path="res://textures/psycha/Psycha5.png" id="11_hniqk"]
+[ext_resource type="PackedScene" uid="uid://50awd4naw3q4" path="res://scenes/la_creatura_spawner.tscn" id="13_5renl"]
 [ext_resource type="Texture2D" uid="uid://cmsrwr8a81u3r" path="res://textures/sercegit.png" id="18_n0542"]
 [ext_resource type="PackedScene" uid="uid://bctat1u1j0s4r" path="res://demon_base.tscn" id="20_nhg8s"]
 [ext_resource type="PackedScene" uid="uid://cde77dnk8n4kx" path="res://demon_bastard.tscn" id="21_endo8"]
@@ -371,6 +372,15 @@ position = Vector2(-17, 2)
 mass = 0.1
 linear_damp = 10.0
 off = Vector2(2.5, -14)
+
+[node name="dziecko_spawner" parent="." instance=ExtResource("13_5renl")]
+position = Vector2(984, -534)
+target_node = "dzieckowoz"
+
+[node name="demon_spawner" parent="." instance=ExtResource("13_5renl")]
+position = Vector2(984, -534)
+le_creatura = ExtResource("20_nhg8s")
+target_node = "demoniarnia"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

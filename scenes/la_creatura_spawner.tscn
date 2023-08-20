@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://50awd4naw3q4"]
+
+[ext_resource type="Script" path="res://scenes/bachor_spawner.gd" id="1_5l0lu"]
+[ext_resource type="PackedScene" uid="uid://cws13kwoe7kwq" path="res://scenes/child.tscn" id="2_wku21"]
+
+[node name="la_creatura_spawner" type="Node2D"]
+position = Vector2(1057, 577)
+script = ExtResource("1_5l0lu")
+le_creatura = ExtResource("2_wku21")
+
+[node name="spawner" type="Node2D" parent="."]
+position = Vector2(-4, 6)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.295
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
