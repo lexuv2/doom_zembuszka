@@ -32,7 +32,7 @@ func _on_timer_timeout():
 func _on_area_2d_body_entered(body):
 	if body is character and $ZombV2.visible:
 		var bd = body as character
-		bd.psycha+=1
+		bd.hp+=1
 		$GPUParticles2D.emitting=true
 		$GPUParticles2D.reparent(get_node("/root/root/"))
 		queue_free()

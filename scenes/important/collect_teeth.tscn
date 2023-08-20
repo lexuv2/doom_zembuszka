@@ -19,3 +19,13 @@ offset_bottom = 23.0
 theme = ExtResource("2_ftfaw")
 theme_override_font_sizes/font_size = 32
 text = "Collect 10 more teeth to advance to next area"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_right = 910.0
+offset_bottom = 233.0
+theme = ExtResource("2_ftfaw")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "ADVANCE TO NEXT STAGE"

@@ -8,5 +8,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$Label.text="Collect %d more teeth to advance to next area" % ($"../..".teeth_cap-$"../..".player_tooths)
+	$Label.text="Collect %d more teeth to advance to next area" % (clamp($"../..".teeth_cap-$"../..".player_tooths,0,1000000))
+	if clamp($"../..".teeth_cap-$"../..".player_tooths,0,1000000)==0:
+		$Label2.visible=true
 	pass

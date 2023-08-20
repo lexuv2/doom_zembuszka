@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://b2gns5uq3xa8n"]
+[gd_scene load_steps=38 format=3 uid="uid://b2gns5uq3xa8n"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_hjnfc"]
 [ext_resource type="PackedScene" uid="uid://bw08oun4htikl" path="res://scenes/booba.tscn" id="1_jb7nx"]
@@ -334,6 +334,9 @@ sources/1 = SubResource("TileSetAtlasSource_yo0k2")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0g8dv"]
 size = Vector2(133, 469)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xla3e"]
+size = Vector2(67, 660)
+
 [node name="root" type="Node2D"]
 script = ExtResource("1_hjnfc")
 
@@ -641,3 +644,15 @@ shape = SubResource("RectangleShape2D_0g8dv")
 [node name="door2" parent="." instance=ExtResource("30_bs2sb")]
 position = Vector2(1344, 0)
 tooth_cap = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door2"]
+position = Vector2(256, 0)
+shape = SubResource("RectangleShape2D_0g8dv")
+
+[node name="door3" parent="." node_paths=PackedStringArray("spawners") instance=ExtResource("30_bs2sb")]
+position = Vector2(126, -1102)
+spawners = [NodePath("../demon_spawner5"), NodePath("../demon_spawner4"), NodePath("../demon_spawner3")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door3"]
+position = Vector2(-132, 71)
+shape = SubResource("RectangleShape2D_xla3e")
