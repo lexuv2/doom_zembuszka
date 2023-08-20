@@ -103,7 +103,6 @@ func _physics_process(delta):
 	$fairy/FaerieBoobaLeft.position.y = position.direction_to(right_marker).y
 	
 	
-
 	
 	
 	if Input.is_action_just_pressed("change_dimmension") and can_change_dim:

@@ -17,8 +17,6 @@ func _on_timer_timeout() -> void:
 	
 	bahor.position = spawn_loc
 	
-	var is_hell = get_tree().root.get_child(0).dimension
 	
-	if  bahor.name == 'demon' and is_hell:
-		print('demon spawned')
-		get_tree().root.get_child(0).get_node(target_node).add_child(bahor)
+	get_tree().root.get_child(0).get_node(target_node).add_child(bahor)
+	
