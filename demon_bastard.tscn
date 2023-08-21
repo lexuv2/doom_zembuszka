@@ -15,7 +15,7 @@ safe_margin = 0.5
 script = ExtResource("1_kofv6")
 hp = 40
 speed = 120.0
-target_refresh_time = 10000
+target_refresh_time = 120
 
 [node name="82530246" type="Sprite2D" parent="."]
 position = Vector2(7, -21)
