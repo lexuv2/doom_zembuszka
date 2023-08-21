@@ -11,7 +11,7 @@ func _ready() -> void:
 var bod=0
 
 func _on_timer_timeout() -> void:
-	if get_tree().root.get_child(0).enemies_num>=20 and not is_dzieciak:
+	if get_tree().root.get_child(0).enemies_num>=60 and not is_dzieciak:
 		return
 	if get_tree().root.get_child(0).dimension and is_dzieciak:
 		return
