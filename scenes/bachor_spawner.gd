@@ -26,11 +26,11 @@ func _on_timer_timeout() -> void:
 	bahor.position = spawn_loc
 	
 	if is_dzieciak and get_tree().root.get_child(0).dimension:
-		bahor.collision_layer=0
-		bahor.collision_layer=0
+		bahor.collision_layer=2
+		bahor.collision_layer=2
 	if !is_dzieciak and !get_tree().root.get_child(0).dimension:
-		bahor.collision_layer=0
-		bahor.collision_layer=0
+		bahor.collision_layer=2
+		bahor.collision_layer=2
 	get_tree().root.get_child(0).get_node(target_node).add_child(bahor)
 	
 

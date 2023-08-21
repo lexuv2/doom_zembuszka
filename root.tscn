@@ -143,7 +143,7 @@ le_creatura = ExtResource("21_endo8")
 target_node = "demoniarnia"
 
 [node name="demon_spawner4" parent="." instance=ExtResource("13_5renl")]
-position = Vector2(864, -1062)
+position = Vector2(988, -1079)
 le_creatura = ExtResource("21_endo8")
 target_node = "demoniarnia"
 
@@ -213,7 +213,7 @@ le_creatura = ExtResource("5_lswl2")
 target_node = "demoniarnia"
 
 [node name="demon_spawner5" parent="." instance=ExtResource("13_5renl")]
-position = Vector2(687, -1227)
+position = Vector2(543, -1162)
 le_creatura = ExtResource("21_endo8")
 target_node = "demoniarnia"
 
