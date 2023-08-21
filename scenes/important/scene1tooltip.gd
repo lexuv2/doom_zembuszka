@@ -9,6 +9,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	text= "Collect teeth by getting 
-close to children and pressing F,
+close to children and pressing F
 %s more left" % clamp(10-get_tree().root.get_child(0).player_tooths,0,10 )
 	pass

@@ -1,9 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://das6607befrl8"]
+[gd_scene load_steps=8 format=3 uid="uid://das6607befrl8"]
 
 [ext_resource type="Theme" uid="uid://dqbbqyqyp6duk" path="res://fairy_theme.tres" id="1_rf658"]
+[ext_resource type="Texture2D" uid="uid://cdgmf4601eh3i" path="res://Untitled_08-20-2023_11-10-32.png" id="2_df15k"]
 [ext_resource type="Script" path="res://start_button.gd" id="2_ipnit"]
 [ext_resource type="Script" path="res://EXITY.gd" id="4_ldxjb"]
 [ext_resource type="Script" path="res://soundVolume.gd" id="5_ofv7g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8kveq"]
+bg_color = Color(0.890196, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a7gf8"]
+bg_color = Color(0.72549, 0, 0, 1)
 
 [node name="start" type="Control"]
 layout_mode = 3
@@ -14,27 +21,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_rf658")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.756863, 0.623529, 0.619608, 1)
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -491.5
-offset_top = 100.0
-offset_right = 491.5
-offset_bottom = 164.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 166
-text = "DENTIST"
+texture = ExtResource("2_df15k")
 
 [node name="start_button" type="Button" parent="."]
 layout_mode = 1
@@ -43,9 +37,10 @@ anchor_left = 0.5
 anchor_top = 0.893
 anchor_right = 0.5
 anchor_bottom = 0.897
-offset_left = -235.5
-offset_top = -200.0
-offset_right = 235.5
+offset_left = -249.0
+offset_top = -159.44
+offset_right = 246.0
+offset_bottom = 40.5599
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 111
@@ -75,6 +70,8 @@ text = "VOLUME"
 [node name="soundVolume" type="HSlider" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_8kveq")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_a7gf8")
 min_value = -45.0
 max_value = 1.0
 script = ExtResource("5_ofv7g")
@@ -96,6 +93,24 @@ theme_override_font_sizes/font_size = 56
 text = "EXIT"
 flat = true
 script = ExtResource("4_ldxjb")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -620.0
+offset_top = -345.0
+offset_right = 579.0
+offset_bottom = -164.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_rf658")
+theme_override_font_sizes/normal_font_size = 181
+bbcode_enabled = true
+text = "[color=black]I'm[/color] done"
 
 [connection signal="pressed" from="start_button" to="start_button" method="_on_pressed"]
 [connection signal="value_changed" from="VBoxContainer/soundVolume" to="VBoxContainer/soundVolume" method="_on_value_changed"]
