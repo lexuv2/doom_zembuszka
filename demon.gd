@@ -12,6 +12,7 @@ var  timer =0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	get_tree().root.get_child(0).enemies_num+=1
 	target=get_tree().root.get_child(0).get_node("character")
 	retarget()
 
@@ -21,6 +22,8 @@ func retarget() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	if collision_mask==0:
+		return
 	timer+=1
 	if timer>target_refresh_time+randi_range(0,10):
 		retarget()
@@ -68,6 +71,7 @@ func _physics_process(delta):
 					$bullet_blood.emit_particle(Transform2D(),Vector2(randf_range(-blood_range,blood_range),randf_range(-blood_range,blood_range)),Color(),Color(),4)
 				$bullet_blood.reparent(get_tree().root.get_child(0))
 				$blood.reparent(get_tree().root.get_child(0))
+				get_tree().root.get_child(0).enemies_num-=1
 				queue_free()
 				return
 

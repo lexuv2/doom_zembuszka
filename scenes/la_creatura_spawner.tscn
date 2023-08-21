@@ -16,7 +16,7 @@ le_creatura = ExtResource("2_wku21")
 position = Vector2(-4, 6)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 6.0
+wait_time = 4.5
 autostart = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -36,3 +36,4 @@ shape = SubResource("RectangleShape2D_0trr2")
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

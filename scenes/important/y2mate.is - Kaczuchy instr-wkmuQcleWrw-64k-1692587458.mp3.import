@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://da4anmakol668"
+path="res://.godot/imported/y2mate.is - Kaczuchy instr-wkmuQcleWrw-64k-1692587458.mp3-e51c80fe86b72ecb26e5c9ff09ed3947.mp3str"
+
+[deps]
+
+source_file="res://scenes/important/y2mate.is - Kaczuchy instr-wkmuQcleWrw-64k-1692587458.mp3"
+dest_files=["res://.godot/imported/y2mate.is - Kaczuchy instr-wkmuQcleWrw-64k-1692587458.mp3-e51c80fe86b72ecb26e5c9ff09ed3947.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

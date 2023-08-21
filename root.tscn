@@ -1,7 +1,8 @@
-[gd_scene load_steps=37 format=3 uid="uid://b2gns5uq3xa8n"]
+[gd_scene load_steps=39 format=3 uid="uid://b2gns5uq3xa8n"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_hjnfc"]
 [ext_resource type="PackedScene" uid="uid://bw08oun4htikl" path="res://scenes/booba.tscn" id="1_jb7nx"]
+[ext_resource type="Script" path="res://chomik.gd" id="2_chpk0"]
 [ext_resource type="PackedScene" uid="uid://t0wf5mei3iro" path="res://character_working.tscn" id="3_ise32"]
 [ext_resource type="Theme" uid="uid://c3doc5dml7lkv" path="res://doom_theme.tres" id="4_2cgt6"]
 [ext_resource type="Texture2D" uid="uid://c8rj2y640ig1t" path="res://textures/ZombV2.png" id="4_5prvw"]
@@ -31,6 +32,9 @@
 [ext_resource type="Texture2D" uid="uid://dxnilxmpbx5eu" path="res://textures/armata.png" id="30_y6dk4"]
 [ext_resource type="Texture2D" uid="uid://gqdrnv5yc8rq" path="res://scenes/boforce.png" id="31_4s4ox"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvfxe"]
+size = Vector2(96.3851, 752.928)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0g8dv"]
 size = Vector2(133, 469)
 
@@ -41,7 +45,7 @@ size = Vector2(79, 488)
 size = Vector2(108.041, 84)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ud6u2"]
-size = Vector2(51, 128.71)
+size = Vector2(51, 110.807)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3diod"]
 size = Vector2(202.566, 61.5)
@@ -51,6 +55,15 @@ size = Vector2(93.077, 57)
 
 [node name="root" type="Node2D"]
 script = ExtResource("1_hjnfc")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(3634, 1197.14)
+scale = Vector2(2.67, 1)
+script = ExtResource("2_chpk0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(11.7316, 277.392)
+shape = SubResource("RectangleShape2D_rvfxe")
 
 [node name="TileMap_fae" type="TileMap" parent="."]
 scale = Vector2(0.995604, 0.95611)
@@ -89,13 +102,11 @@ off = Vector2(2.5, -14)
 [node name="dziecko_spawner" parent="." instance=ExtResource("13_5renl")]
 position = Vector2(482, -419)
 target_node = "dzieckowoz"
-turned_on = true
 is_dzieciak = true
 
 [node name="dziecko_spawner3" parent="." instance=ExtResource("13_5renl")]
 position = Vector2(-1875, -722)
 target_node = "dzieckowoz"
-turned_on = true
 is_dzieciak = true
 
 [node name="dziecko_spawner4" parent="." instance=ExtResource("13_5renl")]
@@ -107,19 +118,16 @@ is_dzieciak = true
 [node name="dziecko_spawner5" parent="." instance=ExtResource("13_5renl")]
 position = Vector2(1439, 1791)
 target_node = "dzieckowoz"
-turned_on = true
 is_dzieciak = true
 
 [node name="dziecko_spawner6" parent="." instance=ExtResource("13_5renl")]
 position = Vector2(3534, 4613)
 target_node = "dzieckowoz"
-turned_on = true
 is_dzieciak = true
 
 [node name="dziecko_spawner2" parent="." instance=ExtResource("13_5renl")]
 position = Vector2(1855, -909)
 target_node = "dzieckowoz"
-turned_on = true
 is_dzieciak = true
 
 [node name="demon_spawner" parent="." instance=ExtResource("13_5renl")]
@@ -353,7 +361,7 @@ next_door = NodePath("../door5")
 spawners = [NodePath("../demon_spawner9"), NodePath("../demon_spawner10"), NodePath("../demon_spawner11"), NodePath("../dziecko_spawner4"), NodePath("../demon_spawner12")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door4"]
-position = Vector2(155, 32.5806)
+position = Vector2(155, 41.5323)
 shape = SubResource("RectangleShape2D_ud6u2")
 
 [node name="door5" parent="." node_paths=PackedStringArray("next_door", "spawners") instance=ExtResource("30_bs2sb")]
@@ -428,3 +436,5 @@ offset_right = -83.0
 offset_bottom = -150.0
 theme = ExtResource("4_2cgt6")
 text = "Press 1 to pickup shotgun"
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

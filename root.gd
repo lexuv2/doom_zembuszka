@@ -12,6 +12,7 @@ var heart=preload("res://textures/sercegit.png")
 @export var lock_dim:bool = false
 var teeth_cap=10
 var open_door_pos: Vector2=Vector2.ZERO
+var enemies_num=0
 
 
 

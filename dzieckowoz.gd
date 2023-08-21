@@ -14,8 +14,8 @@ func enable_children():
 func disable_children():
 	for x in get_children():
 		var rig = x
-		rig.collision_mask=0
-		rig.collision_layer=0
+		rig.collision_mask=2
+		rig.collision_layer=2
 	pass
 func kill():
 	for x in get_children():

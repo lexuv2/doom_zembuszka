@@ -11,6 +11,10 @@ func _ready() -> void:
 var bod=0
 
 func _on_timer_timeout() -> void:
+	if get_tree().root.get_child(0).enemies_num>=20 and not is_dzieciak:
+		return
+	if get_tree().root.get_child(0).dimension and is_dzieciak:
+		return
 	if bod>0:
 		return
 		
@@ -32,10 +36,14 @@ func _on_timer_timeout() -> void:
 
 
 func _on_area_2d_body_entered(body):
-	bod +=1
+	if body is enemy:
+		bod +=1
 	pass # Replace with function body.
 
 
-func _on_area_2d_area_exited(area):
-	bod-=1
+
+
+func _on_area_2d_body_exited(body):
+	if body is enemy:
+		bod -=1
 	pass # Replace with function body.
