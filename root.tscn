@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://b2gns5uq3xa8n"]
+[gd_scene load_steps=41 format=3 uid="uid://b2gns5uq3xa8n"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_hjnfc"]
 [ext_resource type="PackedScene" uid="uid://bw08oun4htikl" path="res://scenes/booba.tscn" id="1_jb7nx"]
@@ -31,6 +31,8 @@
 [ext_resource type="PackedScene" uid="uid://xbsmbgeh8n0a" path="res://scenes/important/door.tscn" id="30_bs2sb"]
 [ext_resource type="Texture2D" uid="uid://dxnilxmpbx5eu" path="res://textures/armata.png" id="30_y6dk4"]
 [ext_resource type="Texture2D" uid="uid://gqdrnv5yc8rq" path="res://scenes/boforce.png" id="31_4s4ox"]
+[ext_resource type="AudioStream" uid="uid://da4anmakol668" path="res://scenes/important/y2mate.is - Kaczuchy instr-wkmuQcleWrw-64k-1692587458.mp3" id="32_vsp5l"]
+[ext_resource type="AudioStream" uid="uid://kjmot20dfrdx" path="res://scenes/important/y2mate.is - Doom Style Industrial Metal Torn Flesh Royalty Free No Copyright Background Music-58PCM-x7jlg-64k-1692587484.mp3" id="33_el8sr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rvfxe"]
 size = Vector2(96.3851, 752.928)
@@ -419,7 +421,7 @@ offset_top = 711.0
 offset_right = -4399.0
 offset_bottom = 778.0
 theme = ExtResource("4_2cgt6")
-text = "Press 2 to pickup 20mm aa gun"
+text = "Press 4 to pickup 20mm aa gun"
 
 [node name="Label3" type="Label" parent="."]
 offset_left = 476.0
@@ -427,7 +429,7 @@ offset_top = 813.0
 offset_right = 781.0
 offset_bottom = 880.0
 theme = ExtResource("4_2cgt6")
-text = "Press 1 to pickup bolt action rifle"
+text = "Press 2 to pickup bolt action rifle"
 
 [node name="Label4" type="Label" parent="."]
 offset_left = -123.0
@@ -436,5 +438,13 @@ offset_right = -83.0
 offset_bottom = -150.0
 theme = ExtResource("4_2cgt6")
 text = "Press 1 to pickup shotgun"
+
+[node name="kaczki" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("32_vsp5l")
+autoplay = true
+
+[node name="metal" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("33_el8sr")
+autoplay = true
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

@@ -59,6 +59,13 @@ var p5 =preload("res://textures/psycha/Psycha5.png")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	if $kaczki !=null:
+		if dimension:
+			$metal.stream_paused=false
+			$kaczki.stream_paused=true
+		else:
+			$metal.stream_paused=true
+			$kaczki.stream_paused=false
 	
 	$CanvasLayer/GridContainer/tooth_icon/Label.text = str($character.score)
 	if $character.psycha >= 5:

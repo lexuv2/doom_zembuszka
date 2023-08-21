@@ -22,7 +22,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("interact") and not obtained and character_in_child and not get_tree().root.get_child(0).dimension:
 		obtained=true
 		get_tree().root.get_child(0).get_node("character").sainty_damage()
-		$AudioStreamPlayer2D.play()
+		$AudioStreamPlayer2D.playing=true
 		for x in score:
 			var tot = tooth.instantiate()
 			add_child(tot)

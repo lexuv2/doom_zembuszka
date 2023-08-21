@@ -9,9 +9,11 @@ var tooth = preload("res://scenes/tooth.tscn")
 var glob_direction
 @export var score =5 
 var  timer =0
+var spawnpos=Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	spawnpos=position
 	get_tree().root.get_child(0).enemies_num+=1
 	target=get_tree().root.get_child(0).get_node("character")
 	retarget()
@@ -22,6 +24,8 @@ func retarget() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	if position.distance_to(spawnpos)>2000:
+		queue_free()
 	if collision_mask==0:
 		return
 	timer+=1
