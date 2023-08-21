@@ -84,7 +84,10 @@ func _physics_process(delta):
 		$CanvasLayer/GridContainer/sanity/TextureRect.texture=p1
 	else:
 		$CanvasLayer/GridContainer/sanity/TextureRect.texture=Texture2D
-		
+	if $character.psycha==0:
+		$CanvasLayer/lowsanity.visible=true
+	else:
+		$CanvasLayer/lowsanity.visible=false
 		
 		
 		

@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://dp0pgckmc7ndt"]
 
 [ext_resource type="Script" path="res://scenes/RUM.gd" id="1_sqst4"]
-[ext_resource type="Texture2D" uid="uid://bgoqnlfevgb11" path="res://scenes/Alko.png" id="2_5h08a"]
 [ext_resource type="Texture2D" uid="uid://dw70d47y210wx" path="res://scenes/szlugi-sheet.png" id="2_eqpy1"]
+[ext_resource type="Texture2D" uid="uid://cl1ljchypxmjq" path="res://scenes/important/Alko2-sheet.png" id="2_f45w8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aa8mi"]
 radius = 16.0
@@ -35,7 +35,7 @@ color = Color(0.878431, 1, 0, 1)
 [node name="candy" type="RigidBody2D"]
 linear_damp = 1.0
 script = ExtResource("1_sqst4")
-second_sprite = ExtResource("2_5h08a")
+second_sprite = ExtResource("2_f45w8")
 
 [node name="ZombV2" type="Sprite2D" parent="."]
 modulate = Color(0.999999, 0.999999, 0.999999, 1)

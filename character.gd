@@ -90,7 +90,9 @@ func _physics_process(delta):
 		velocity.y += SPEED
 	if  Input.is_action_pressed("move_right"):
 		velocity.x += SPEED
+		$fairy.scale.x=+1
 	if  Input.is_action_pressed("move_left"):
+		$fairy.scale.x=-1
 		velocity.x -= SPEED
 	if  Input.is_action_just_pressed("dash"):
 		

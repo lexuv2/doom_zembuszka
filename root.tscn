@@ -133,7 +133,7 @@ le_creatura = ExtResource("21_endo8")
 target_node = "demoniarnia"
 
 [node name="demon_spawner4" parent="." instance=ExtResource("13_5renl")]
-position = Vector2(2642, -1372)
+position = Vector2(779, -1156)
 le_creatura = ExtResource("21_endo8")
 target_node = "demoniarnia"
 
@@ -163,17 +163,17 @@ le_creatura = ExtResource("21_endo8")
 target_node = "demoniarnia"
 
 [node name="demon_spawner13" parent="." instance=ExtResource("13_5renl")]
-position = Vector2(440, 2415)
+position = Vector2(473, 2696)
 le_creatura = ExtResource("20_nhg8s")
 target_node = "demoniarnia"
 
 [node name="demon_spawner14" parent="." instance=ExtResource("13_5renl")]
-position = Vector2(1369, 2614)
+position = Vector2(965, 2966)
 le_creatura = ExtResource("22_su5k4")
 target_node = "demoniarnia"
 
 [node name="demon_spawner15" parent="." instance=ExtResource("13_5renl")]
-position = Vector2(2550, 2251)
+position = Vector2(2450, 2617)
 le_creatura = ExtResource("21_endo8")
 target_node = "demoniarnia"
 
@@ -208,7 +208,7 @@ le_creatura = ExtResource("5_lswl2")
 target_node = "demoniarnia"
 
 [node name="demon_spawner5" parent="." instance=ExtResource("13_5renl")]
-position = Vector2(228, -1372)
+position = Vector2(311, -1338)
 le_creatura = ExtResource("21_endo8")
 target_node = "demoniarnia"
 
@@ -296,6 +296,16 @@ offset_top = -3.0
 offset_right = 426.0
 offset_bottom = -3.0
 
+[node name="lowsanity" type="Label" parent="CanvasLayer"]
+offset_left = 739.0
+offset_top = 87.0
+offset_right = 1133.0
+offset_bottom = 320.0
+theme = ExtResource("4_2cgt6")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "LOW SANITY"
+
 [node name="dzieckowoz" type="Node2D" parent="."]
 script = ExtResource("27_cuboh")
 
@@ -327,11 +337,12 @@ spawners = [NodePath("../demon_spawner5"), NodePath("../demon_spawner4"), NodePa
 position = Vector2(-105, 24)
 shape = SubResource("RectangleShape2D_xla3e")
 
-[node name="door2" parent="." node_paths=PackedStringArray("spawners") instance=ExtResource("30_bs2sb")]
+[node name="door2" parent="." node_paths=PackedStringArray("next_door", "spawners") instance=ExtResource("30_bs2sb")]
 position = Vector2(-4812, 254)
 scale = Vector2(6.595, 1)
 tooth_cap = 150
 min_tooth_cap = 50
+next_door = NodePath("../door4")
 spawners = [NodePath("../demon_spawner8"), NodePath("../demon_spawner6"), NodePath("../demon_spawner7"), NodePath("../demon_spawner3")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door2"]
@@ -376,6 +387,7 @@ shape = SubResource("RectangleShape2D_ryrds")
 [node name="weapon_pickup" parent="." instance=ExtResource("29_d2o6n")]
 position = Vector2(285, 827)
 scale = Vector2(1.93, 1.93)
+unlock_ind = 1
 
 [node name="weapon_pickup2" parent="." instance=ExtResource("29_d2o6n")]
 position = Vector2(89, -1043)
@@ -388,6 +400,7 @@ position = Vector2(-4563, 492)
 scale = Vector2(3.525, 3.525)
 texture = ExtResource("31_4s4ox")
 hframes = 3
+unlock_ind = 2
 
 [node name="Label" type="Label" parent="."]
 offset_left = -217.0
