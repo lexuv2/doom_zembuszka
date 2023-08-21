@@ -420,3 +420,11 @@ offset_right = 781.0
 offset_bottom = 880.0
 theme = ExtResource("4_2cgt6")
 text = "Press 1 to pickup bolt action rifle"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = -123.0
+offset_top = -173.0
+offset_right = -83.0
+offset_bottom = -150.0
+theme = ExtResource("4_2cgt6")
+text = "Press 1 to pickup shotgun"
