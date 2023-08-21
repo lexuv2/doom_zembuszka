@@ -10,6 +10,8 @@ radius = 13.0
 
 [node name="demon" type="CharacterBody2D"]
 motion_mode = 1
+wall_min_slide_angle = 0.0
+safe_margin = 0.5
 script = ExtResource("1_q7581")
 speed = 150.0
 
