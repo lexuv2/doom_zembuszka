@@ -87,7 +87,7 @@ linear_damp = 10.0
 off = Vector2(2.5, -14)
 
 [node name="dziecko_spawner" parent="." instance=ExtResource("13_5renl")]
-position = Vector2(984, -534)
+position = Vector2(482, -419)
 target_node = "dzieckowoz"
 turned_on = true
 is_dzieciak = true
@@ -123,12 +123,12 @@ turned_on = true
 is_dzieciak = true
 
 [node name="demon_spawner" parent="." instance=ExtResource("13_5renl")]
-position = Vector2(1306, -576)
+position = Vector2(1126, -158)
 le_creatura = ExtResource("20_nhg8s")
 target_node = "demoniarnia"
 
 [node name="demon_spawner3" parent="." instance=ExtResource("13_5renl")]
-position = Vector2(2649, 644)
+position = Vector2(2212, -146)
 le_creatura = ExtResource("21_endo8")
 target_node = "demoniarnia"
 
@@ -208,7 +208,7 @@ le_creatura = ExtResource("21_endo8")
 target_node = "demoniarnia"
 
 [node name="demon_spawner2" parent="." instance=ExtResource("13_5renl")]
-position = Vector2(290, 572)
+position = Vector2(502, 490)
 le_creatura = ExtResource("20_nhg8s")
 target_node = "demoniarnia"
 
@@ -395,7 +395,7 @@ position = Vector2(-4563, 492)
 scale = Vector2(3.525, 3.525)
 texture = ExtResource("31_4s4ox")
 hframes = 3
-unlock_ind = 2
+unlock_ind = 3
 
 [node name="Label" type="Label" parent="."]
 offset_left = -217.0

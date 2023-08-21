@@ -84,6 +84,8 @@ func _physics_process(delta):
 	
 
 	sprite_rotation_target=0.0
+	if Input.is_action_just_pressed("add_teeth"):
+		score+=5
 	if  Input.is_action_pressed("move_up"):
 		velocity.y -= SPEED
 	if  Input.is_action_pressed("move_down"):
