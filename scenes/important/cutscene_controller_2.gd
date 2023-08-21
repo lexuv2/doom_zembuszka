@@ -2,19 +2,19 @@ extends Node2D
 
 var dialog_box
 
-var dialogs = ["You all did a great job today, we have collected\n 318 teeth today",
-"unfortunately there is one problem...",
+var dialogs = ["You all did a great job today, we have collected\n 318 teeth today.",
+"Unfortunately there is one problem...",
 "Our top Hell employee needs a vacation\n to recharge from his hard work.\n We need a volunteer to take over his duties.",
 "Ugh........",
 "I dont know how to operate a gun!",
 "That's so brutal!",
-"It's to dangerous",
+"It's too dangerous!",
 "This sounds like something for me, I'm In.\n Anything for a break from those bloody children. ",
 "Fuck yeah! Lets go!",
 "Hey! Not so fast",
-"You still need to meet you daily quota on teeth",
+"You still need to meet you daily quota on teeth!",
 "Here, take this coin, it allows\n you to travel betwen hell and our world",
-"FUCK"]
+"FUCK!!!"]
 var auto_next =[1,1,1,1,1,1,1,0,0,1,1,0,1,1,1,1]
 var textures = ["res://scenes/important/portraits/hr.png",
 "res://scenes/important/portraits/hr.png",

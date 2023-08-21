@@ -18,6 +18,7 @@ func _ready():
 	var box = dialog_box.instantiate()
 	box.text=dialogs[0]
 	box.texture=load(textures[dialog_ind])
+	box.skip_dialogue_notif_shown = true
 	add_child(box)
 	dialog_ind+=1
 	pass # Replace with function body.
@@ -31,6 +32,7 @@ func _process(delta):
 		var box = dialog_box.instantiate()
 		box.text=dialogs[dialog_ind]
 		box.texture=load(textures[dialog_ind])
+		box.skip_dialogue_notif_shown = true
 		add_child(box)
 		dialog_ind+=1
 		

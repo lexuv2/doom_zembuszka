@@ -5,10 +5,14 @@ var texture: Texture2D
 var text_timer=0
 var displayed_text_size=0
 @export var text_speed = 1
+@export var skip_dialogue_notif_shown = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$PanelContainer/HBoxContainer/TextureRect.texture=texture
 	$PanelContainer/HBoxContainer/Label.text=""
+	
+	if !skip_dialogue_notif_shown:
+		$"PanelContainer/skip dialog".hide()
 	pass # Replace with function body.
 
 

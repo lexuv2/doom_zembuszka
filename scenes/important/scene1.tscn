@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b2kpf1wtx0civ"]
+[gd_scene load_steps=25 format=3 uid="uid://b2kpf1wtx0civ"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_eialu"]
 [ext_resource type="TileSet" uid="uid://byxedspvuke82" path="res://scenes/important/fae_tile_set.tres" id="2_x7jmw"]
@@ -22,6 +22,17 @@
 [ext_resource type="PackedScene" uid="uid://bi35725ai17ay" path="res://scenes/cutscene_controller_1.tscn" id="22_hsoqp"]
 [ext_resource type="FontFile" uid="uid://cpiu8xsxps0v4" path="res://Cute Notes.ttf" id="23_e2wfp"]
 [ext_resource type="Script" path="res://scenes/important/scene1tooltip.gd" id="24_6yguc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ua14p"]
+content_margin_left = 30.0
+content_margin_top = 30.0
+content_margin_right = 30.0
+content_margin_bottom = 30.0
+bg_color = Color(0.247059, 0.247059, 0.247059, 0.309804)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 
 [sub_resource type="Theme" id="Theme_p7jno"]
 default_font = ExtResource("23_e2wfp")
@@ -163,6 +174,15 @@ position = Vector2(1512, 417)
 position = Vector2(696, 239)
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Label2" type="Label" parent="CanvasLayer2"]
+offset_left = 622.0
+offset_top = 455.0
+offset_right = 1331.0
+offset_bottom = 615.0
+theme_override_font_sizes/font_size = 71
+theme_override_styles/normal = SubResource("StyleBoxFlat_ua14p")
+text = "Use WASD to move"
 
 [node name="cutscene_controller_1" parent="CanvasLayer2" instance=ExtResource("22_hsoqp")]
 
