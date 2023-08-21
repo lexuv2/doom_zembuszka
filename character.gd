@@ -39,6 +39,7 @@ func sainty_damage():
 	psycha-=1
 
 func change_dimension(dim: bool):
+	dimension=dim
 	if papapj2137:
 		$AnimationPlayer2.play("coin")
 	papapj2137=true
@@ -127,15 +128,15 @@ func _physics_process(delta):
 		$Camera2D.wanna_zoom+=0.1
 	if Input.is_action_just_pressed("scroll_down"):
 		$Camera2D.wanna_zoom-=0.1
-	if Input.is_action_just_pressed("weapon1") and unlocks[0]:
+	if Input.is_action_just_pressed("weapon1") and unlocks[0] and dimension==true:
 		$gun_handler.set_weapon(weapons[0])
-	if Input.is_action_just_pressed("weapon2")and unlocks[1]:
+	if Input.is_action_just_pressed("weapon2")and unlocks[1] and dimension==true:
 		$gun_handler.set_weapon(weapons[1])
-	if Input.is_action_just_pressed("weapon3")and unlocks[2]:
+	if Input.is_action_just_pressed("weapon3")and unlocks[2] and dimension==true: 
 		$gun_handler.set_weapon(weapons[2])
-	if Input.is_action_just_pressed("weapon4")and unlocks[3]:
+	if Input.is_action_just_pressed("weapon4")and unlocks[3] and dimension==true:
 		$gun_handler.set_weapon(weapons[3])
-	if Input.is_action_just_pressed("weapon5")and unlocks[4]:
+	if Input.is_action_just_pressed("weapon5")and unlocks[4] and dimension==true:
 		$gun_handler.set_weapon(weapons[4])
 
 		

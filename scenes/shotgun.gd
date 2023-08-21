@@ -11,6 +11,7 @@ extends Node2D
 @export var damage=10
 @export var automatic: bool =false
 @export var animation_player:AnimationPlayer
+var flip=false
 var delay = 100
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -64,6 +65,10 @@ func _shoot():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if not flip:
+		$gun_sprite.scale.y=-1
+	else:
+		$gun_sprite.scale.y=1
 
 	delay+=1
 	pass

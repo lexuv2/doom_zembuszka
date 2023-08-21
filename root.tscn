@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://b2gns5uq3xa8n"]
+[gd_scene load_steps=37 format=3 uid="uid://b2gns5uq3xa8n"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_hjnfc"]
 [ext_resource type="PackedScene" uid="uid://bw08oun4htikl" path="res://scenes/booba.tscn" id="1_jb7nx"]
@@ -25,7 +25,6 @@
 [ext_resource type="PackedScene" uid="uid://cde77dnk8n4kx" path="res://demon_bastard.tscn" id="21_endo8"]
 [ext_resource type="PackedScene" uid="uid://drdvbvs5dn6yn" path="res://demon_flyer.tscn" id="22_su5k4"]
 [ext_resource type="PackedScene" uid="uid://dhmicqok8siux" path="res://scenes/important/collect_teeth.tscn" id="24_vjpb8"]
-[ext_resource type="PackedScene" uid="uid://cws13kwoe7kwq" path="res://scenes/child.tscn" id="26_qjxgv"]
 [ext_resource type="Script" path="res://dzieckowoz.gd" id="27_cuboh"]
 [ext_resource type="PackedScene" uid="uid://dstkxdwijpq0c" path="res://scenes/important/weapon_pickup.tscn" id="29_d2o6n"]
 [ext_resource type="PackedScene" uid="uid://xbsmbgeh8n0a" path="res://scenes/important/door.tscn" id="30_bs2sb"]
@@ -54,7 +53,6 @@ size = Vector2(93.077, 57)
 script = ExtResource("1_hjnfc")
 
 [node name="TileMap_fae" type="TileMap" parent="."]
-visible = false
 scale = Vector2(0.995604, 0.95611)
 tile_set = ExtResource("4_ygbk0")
 cell_quadrant_size = 64
@@ -301,20 +299,8 @@ offset_bottom = -3.0
 [node name="dzieckowoz" type="Node2D" parent="."]
 script = ExtResource("27_cuboh")
 
-[node name="child" parent="dzieckowoz" instance=ExtResource("26_qjxgv")]
-position = Vector2(-758, -171)
-
 [node name="demoniarnia" type="Node2D" parent="."]
 script = ExtResource("27_cuboh")
-
-[node name="demon" parent="demoniarnia" instance=ExtResource("5_lswl2")]
-position = Vector2(295, 255)
-
-[node name="demon2" parent="demoniarnia" instance=ExtResource("20_nhg8s")]
-position = Vector2(455, -186)
-
-[node name="demon3" parent="demoniarnia" instance=ExtResource("21_endo8")]
-position = Vector2(-360, -101)
 
 [node name="demon4" parent="demoniarnia" instance=ExtResource("22_su5k4")]
 position = Vector2(24, 379)
@@ -330,10 +316,11 @@ spawners = [NodePath("../dziecko_spawner"), NodePath("../demon_spawner"), NodePa
 position = Vector2(256, 64)
 shape = SubResource("RectangleShape2D_0g8dv")
 
-[node name="door3" parent="." node_paths=PackedStringArray("spawners") instance=ExtResource("30_bs2sb")]
+[node name="door3" parent="." node_paths=PackedStringArray("next_door", "spawners") instance=ExtResource("30_bs2sb")]
 position = Vector2(121, -1074)
 tooth_cap = 50
 min_tooth_cap = 10
+next_door = NodePath("../door2")
 spawners = [NodePath("../demon_spawner5"), NodePath("../demon_spawner4"), NodePath("../demon_spawner3"), NodePath("../dziecko_spawner2")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door3"]
@@ -401,3 +388,27 @@ position = Vector2(-4563, 492)
 scale = Vector2(3.525, 3.525)
 texture = ExtResource("31_4s4ox")
 hframes = 3
+
+[node name="Label" type="Label" parent="."]
+offset_left = -217.0
+offset_top = -1197.0
+offset_right = 60.0
+offset_bottom = -1130.0
+theme = ExtResource("4_2cgt6")
+text = "Press 3 to pickup cannon"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -4704.0
+offset_top = 711.0
+offset_right = -4399.0
+offset_bottom = 778.0
+theme = ExtResource("4_2cgt6")
+text = "Press 2 to pickup 20mm aa gun"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 476.0
+offset_top = 813.0
+offset_right = 781.0
+offset_bottom = 880.0
+theme = ExtResource("4_2cgt6")
+text = "Press 1 to pickup bolt action rifle"

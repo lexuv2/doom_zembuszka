@@ -45,4 +45,8 @@ func _physics_process(delta):
 	var gun = get_child(0)
 	gun.global_pos=global_pos
 	gun.rotation = global_pos.angle_to_point(get_global_mouse_position())
+	if gun.rotation>-PI/2 and gun.rotation<PI/3:
+		gun.flip=true
+	else:
+		gun.flip=false
 	pass
