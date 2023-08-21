@@ -267,6 +267,7 @@ lifetime = 0.3
 one_shot = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-1, 1100)
 scale = Vector2(2, 2)
 texture = ExtResource("9_uk10d")

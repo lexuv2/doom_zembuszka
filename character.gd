@@ -55,6 +55,8 @@ func change_dimension(dim: bool):
 		$fairy/FaerieBoobaRight.texture=sprite_right_boob_fairy
 	
 func _physics_process(delta):
+	hp=clamp(hp,0,5)
+	psycha=clamp(psycha,0,5)
 	if (hp<=0):
 		get_tree().change_scene_to_file("res://gam_over.tscn")
 	if (psycha<=0):

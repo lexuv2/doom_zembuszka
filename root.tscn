@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://b2gns5uq3xa8n"]
+[gd_scene load_steps=40 format=3 uid="uid://b2gns5uq3xa8n"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_hjnfc"]
 [ext_resource type="PackedScene" uid="uid://bw08oun4htikl" path="res://scenes/booba.tscn" id="1_jb7nx"]
@@ -335,7 +335,13 @@ sources/1 = SubResource("TileSetAtlasSource_yo0k2")
 size = Vector2(133, 469)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xla3e"]
-size = Vector2(462.5, 75)
+size = Vector2(79, 488)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4e3l2"]
+size = Vector2(108.041, 84)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ud6u2"]
+size = Vector2(51, 128.71)
 
 [node name="root" type="Node2D"]
 script = ExtResource("1_hjnfc")
@@ -383,6 +389,24 @@ off = Vector2(2.5, -14)
 
 [node name="dziecko_spawner" parent="." instance=ExtResource("13_5renl")]
 position = Vector2(984, -534)
+target_node = "dzieckowoz"
+turned_on = true
+is_dzieciak = true
+
+[node name="dziecko_spawner3" parent="." instance=ExtResource("13_5renl")]
+position = Vector2(-1875, -722)
+target_node = "dzieckowoz"
+turned_on = true
+is_dzieciak = true
+
+[node name="dziecko_spawner4" parent="." instance=ExtResource("13_5renl")]
+position = Vector2(-1879, 787)
+target_node = "dzieckowoz"
+turned_on = true
+is_dzieciak = true
+
+[node name="dziecko_spawner2" parent="." instance=ExtResource("13_5renl")]
+position = Vector2(1855, -909)
 target_node = "dzieckowoz"
 turned_on = true
 is_dzieciak = true
@@ -632,97 +656,41 @@ position = Vector2(-360, -101)
 [node name="demon4" parent="demoniarnia" instance=ExtResource("22_su5k4")]
 position = Vector2(24, 379)
 
-[node name="door" parent="." node_paths=PackedStringArray("spawners") instance=ExtResource("30_bs2sb")]
-position = Vector2(1095, -64)
+[node name="door" parent="." node_paths=PackedStringArray("next_door", "spawners") instance=ExtResource("30_bs2sb")]
+position = Vector2(1345, -30)
 tooth_cap = 10
+enabled = true
+next_door = NodePath("../door3")
 spawners = [NodePath("../dziecko_spawner"), NodePath("../demon_spawner"), NodePath("../demon_spawner2")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door"]
 position = Vector2(256, 64)
 shape = SubResource("RectangleShape2D_0g8dv")
 
-[node name="door" parent="door" node_paths=PackedStringArray("spawners") instance=ExtResource("30_bs2sb")]
-position = Vector2(-4471, 2020)
-tooth_cap = 10
-spawners = [NodePath("../../dziecko_spawner"), NodePath("../../demon_spawner"), NodePath("../../demon_spawner2")]
-
-[node name="door" parent="door/door" node_paths=PackedStringArray("spawners") instance=ExtResource("30_bs2sb")]
-position = Vector2(-2041, 3428)
-tooth_cap = 10
-spawners = [NodePath("../../../dziecko_spawner"), NodePath("../../../demon_spawner"), NodePath("../../../demon_spawner2")]
-
-[node name="door2" parent="door" node_paths=PackedStringArray("spawners") instance=ExtResource("30_bs2sb")]
-position = Vector2(-777, 3366)
-tooth_cap = 10
-spawners = [NodePath("../../dziecko_spawner"), NodePath("../../demon_spawner"), NodePath("../../demon_spawner2")]
-
-[node name="door2" parent="door/door2" node_paths=PackedStringArray("spawners") instance=ExtResource("30_bs2sb")]
-position = Vector2(66, 1)
-tooth_cap = 10
-spawners = [NodePath("../../../dziecko_spawner"), NodePath("../../../demon_spawner"), NodePath("../../../demon_spawner2")]
-
-[node name="door2" parent="door/door2/door2" node_paths=PackedStringArray("spawners") instance=ExtResource("30_bs2sb")]
-position = Vector2(-256, 1038)
-tooth_cap = 10
-spawners = [NodePath("../../../../dziecko_spawner"), NodePath("../../../../demon_spawner"), NodePath("../../../../demon_spawner2")]
-
-[node name="door2" parent="door/door2/door2/door2" node_paths=PackedStringArray("spawners") instance=ExtResource("30_bs2sb")]
-position = Vector2(1, 62)
-tooth_cap = 10
-spawners = [NodePath("../../../../../dziecko_spawner"), NodePath("../../../../../demon_spawner"), NodePath("../../../../../demon_spawner2")]
-
-[node name="door2" parent="." instance=ExtResource("30_bs2sb")]
-position = Vector2(1344, 0)
-tooth_cap = 10
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="door2"]
-position = Vector2(256, 0)
-shape = SubResource("RectangleShape2D_0g8dv")
-
 [node name="door3" parent="." node_paths=PackedStringArray("spawners") instance=ExtResource("30_bs2sb")]
-position = Vector2(126, -1102)
-spawners = [NodePath("../demon_spawner5"), NodePath("../demon_spawner4"), NodePath("../demon_spawner3")]
+position = Vector2(121, -1074)
+tooth_cap = 50
+min_tooth_cap = 10
+spawners = [NodePath("../demon_spawner5"), NodePath("../demon_spawner4"), NodePath("../demon_spawner3"), NodePath("../dziecko_spawner2")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door3"]
-position = Vector2(-132, 71)
+position = Vector2(-105, 24)
 shape = SubResource("RectangleShape2D_xla3e")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="door3/CollisionShape2D"]
-position = Vector2(-4557.25, 1542.5)
-shape = SubResource("RectangleShape2D_xla3e")
+[node name="door2" parent="." node_paths=PackedStringArray("spawners") instance=ExtResource("30_bs2sb")]
+position = Vector2(-4812, 254)
+scale = Vector2(6.595, 1)
+spawners = [NodePath("../demon_spawner8"), NodePath("../demon_spawner6"), NodePath("../demon_spawner7"), NodePath("../demon_spawner3")]
 
-[node name="door4" parent="." instance=ExtResource("30_bs2sb")]
-position = Vector2(127, -1042)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door2"]
+position = Vector2(33.9651, 267)
+shape = SubResource("RectangleShape2D_4e3l2")
 
-[node name="door5" parent="." instance=ExtResource("30_bs2sb")]
-position = Vector2(-4396, 243)
+[node name="door4" parent="." node_paths=PackedStringArray("spawners") instance=ExtResource("30_bs2sb")]
+position = Vector2(131, 727)
+scale = Vector2(1, 3.1)
+spawners = [NodePath("../demon_spawner9"), NodePath("../demon_spawner10"), NodePath("../demon_spawner11"), NodePath("../dziecko_spawner4"), NodePath("../demon_spawner12")]
 
-[node name="door6" parent="." instance=ExtResource("30_bs2sb")]
-position = Vector2(-4460, 242)
-
-[node name="door7" parent="." instance=ExtResource("30_bs2sb")]
-position = Vector2(-4525, 243)
-
-[node name="door8" parent="." instance=ExtResource("30_bs2sb")]
-position = Vector2(-4588, 243)
-
-[node name="door9" parent="." instance=ExtResource("30_bs2sb")]
-position = Vector2(-4652, 243)
-
-[node name="door10" parent="." instance=ExtResource("30_bs2sb")]
-position = Vector2(-4715, 245)
-
-[node name="door11" parent="." instance=ExtResource("30_bs2sb")]
-position = Vector2(-4780, 244)
-
-[node name="door12" parent="." instance=ExtResource("30_bs2sb")]
-position = Vector2(-4715, 245)
-
-[node name="door13" parent="." instance=ExtResource("30_bs2sb")]
-position = Vector2(-3376, 2019)
-
-[node name="door13" parent="door13" instance=ExtResource("30_bs2sb")]
-position = Vector2(-4780, 244)
-
-[node name="door14" parent="door13" instance=ExtResource("30_bs2sb")]
-position = Vector2(3504, 2261)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door4"]
+position = Vector2(155, 32.5806)
+shape = SubResource("RectangleShape2D_ud6u2")

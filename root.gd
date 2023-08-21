@@ -19,7 +19,7 @@ func change_diemnsion(dim: bool):
 	if lock_dim:
 		return
 	#1- hell
-	#0-fae
+	#0-faeddd
 	dimension=dim
 	if dim==true:
 		if $Control!=null:
