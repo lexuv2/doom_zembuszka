@@ -59,7 +59,7 @@ func _physics_process(delta):
 	psycha=clamp(psycha,0,5)
 	if (hp<=0):
 		get_tree().change_scene_to_file("res://gam_over.tscn")
-	if (psycha<=0):
+	if (psycha<=0) and dimension==false:
 		change_dimension(1)
 	if lock_controlls:
 		return
