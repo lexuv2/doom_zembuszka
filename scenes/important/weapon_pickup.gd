@@ -14,7 +14,7 @@ func _process(delta):
 
 
 func _on_area_2d_body_entered(body):
-	if body is character and $ZombV2.visible:
+	if body is character:
 		var bd = body as character
 		bd.unlocks[unlock_ind]=1
 		queue_free()

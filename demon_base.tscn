@@ -6,7 +6,7 @@
 [ext_resource type="Material" uid="uid://kb55djouc5ph" path="res://textures/blood_floor.tres" id="4_rt5k3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pv2w1"]
-radius = 56.5685
+radius = 38.0526
 
 [node name="demon" type="CharacterBody2D"]
 motion_mode = 1
