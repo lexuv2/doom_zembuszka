@@ -348,7 +348,7 @@ scale = Vector2(6.595, 1)
 tooth_cap = 150
 min_tooth_cap = 50
 next_door = NodePath("../door4")
-spawners = [NodePath("../demon_spawner8"), null, NodePath("../demon_spawner7"), NodePath("../demon_spawner3")]
+spawners = [NodePath("../demon_spawner8"), NodePath("../dziecko_spawner3"), NodePath("../demon_spawner7"), NodePath("../demon_spawner3")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door2"]
 position = Vector2(33.9651, 267)
