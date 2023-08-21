@@ -14,6 +14,8 @@ var opened = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	for x in spawners:
+		if x==null:
+			continue
 		x.turned_on=enabled
 	if enabled:
 		get_tree().root.get_child(0).teeth_cap=tooth_cap
